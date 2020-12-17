@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SwishGame</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/Resp3.css">
+    <link rel="stylesheet" href="css/PageDaccueil.css">
+    <link rel="stylesheet" href="css/PartieGame.css">
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+</head>
+<body onload="ChoisirPseudo()">
+
+
+
+    <div id="pageAccueil">
+        <div class="logo">
+            <a onclick="journuit()">
+                <img src="imgs/swishjour.png" id="imglogo">
+            </a>
+        </div>
+
+        <div class="containerparam">
+            <div id="infosec">
+                <div class="inner">
+                    <ul class="activity">
+                        <li id="listeinfobtn">
+                            <a id="info" href="#popup1">i</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="infosec2">
+                <div class="inner">
+                    <ul class="activity">
+                        <li id="listeinfobtn">
+                            <a id="info" href="#popup2">&#9881;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="containpseudo">
+            <a onclick="lancerpartie()">
+                <div id="contourbuttonvalider">
+                    <div class="bouttonvalider">
+                        <h1 id="textjouer">JOUER</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Les Règles :</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    Swish : Jeu de 60 cartes compos&eacute chacun de billes et de cerceaux, de 4 couleurs
+                    diff&eacuterentes possibles. 16 cartes sont pos&eacutes sur une table et le joueur doit faire superposer
+                    des cartes de mani&egravere que chaque bille soit dans le cerceau de m&ecircme couleur d’une autre
+                    carte.
+                </div>
+            </div>
+        </div>
+
+        <div id="popup2" class="overlay">
+            <div class="popup2">
+                <h2>Les Paramètres :</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="titre">
+                        <h3 id="text">Mode Forme</h3>
+                    </div>
+                    <div class="Mode_Forme">
+                            <a class="containform" onclick="chooseForm(0)">
+                                <div id="0" class="xanneau">
+                                    <div class="xrondinterieur"></div>
+                                </div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(1)">
+                                <div id="1" class="xcarre">
+                                    <div class="xcarreinterieur"></div>
+                                </div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(2)">
+                                <div class="xtrianglerinterieur"></div>
+                                <div id="2" class="xtriangle"></div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(3)">
+                                <div class="croixinté">
+                                    <div class="xcroixgaucheinte"></div>
+                                    <div class="xcroixdroiteinte"></div>
+                                </div>
+                                <div id="3" class="croix">
+                                    <div id="a" class="xcroixgauche"></div>
+                                    <div id="b" class="xcroixdroite"></div>
+                                </div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(4)">
+                                <div class="xlosangeinte"></div>
+                                <div id="4" class="xlosange"></div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(5)">
+                                <div class="xtrapezeinte"></div>
+                                <div id="5" class="xtrapeze"></div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(6)">
+                                <div class="xhexainte"></div>
+                                <div id="6" class="xhexa"></div>
+                            </a>
+                            <a class="containform" onclick="chooseForm(7)">
+                                <div class="xoctogoninte"></div>
+                                <div id="7" class="xoctogon"></div>
+                            </a>
+                            
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <h3>Choix Couleur</h3>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div id="containpseudo">
+            <div id="pseudoenter">
+                <div id="fondinput">
+                    <input onkeypress="ajouterplayer(event)" maxlength="12" id="inputpseudo">
+                </div>
+            </div>
+            <a onclick="EnvoyerNouveauNom()">
+                <div id="contourbuttonvalider">
+                    <div class="bouttonvalider" >
+                        <h1 id="textjouer">JOUER</h1>
+                    </div>
+                </div>
+            </a>
+            <div id="buttonadd">
+                <a onclick="addplayer()">
+                    <h2 id="textplus">+</h2>
+                </a>
+            </div>
+        </div>
+
+        <div id="containplayers">
+        </div>
+        -->
+
+        <div id="ContainBottom">
+            <!-- Forme : rond-->
+            <div class="containform">
+                <div class="anneau">
+                    <div class="rondinterieur inté"></div>
+                </div>
+            </div>
+            <div class="containform">
+                <div class="rond"></div>
+            </div>
+
+
+            <!-- Forme : carré-->
+            <div class="containform">
+                <div class="carre">
+                    <div class="carreinterieur inté"></div>
+                </div>
+            </div>
+            <div class="containform">
+                <div class="pcarre"></div>
+            </div>
+        </div>
+
+        <div class="mounts">
+            <img src="imgs/lightcloud.png" id="cloud">
+            <img src="imgs/mount1.png" id="mount1">
+            <img src="imgs/mount2.png" id="mount2">
+        </div>
+    </div>
+
+
+    <div id="pageGame">
+        <div class="menuhaut">
+            <div id="Redistribution">
+                <a onclick="creePartieDeTest()" id="relancerbtn">
+                    <div id="contourbuttonvalider">
+                        <div class="bouttonvalider">
+                            <h1 id="textjouer2">RELANCER</h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="Redistribution2">
+                <a id="relancerbtn" onclick="test()">
+                    <div id="contourbuttonvalider">
+                        <div class="bouttonvalider2">
+                            <h1 id="btnvalider2">VALIDER</h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="logop2">
+                <a onclick="journuit()">
+                    <img src="imgs/swishjour.png" id="imglogo2">
+                </a>
+            </div>
+            <a class="retourstp" onclick="retour()">
+                <div class="buttonretour">
+                    <h1 class="txt">X</h1>
+                </div>
+            </a>
+        </div>
+
+        <div id="containcards" class="containcards">
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

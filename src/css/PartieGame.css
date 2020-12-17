@@ -1,0 +1,57 @@
+
+#pageGame {
+    visibility: hidden;
+}
+
+.menuhaut {
+    height: 10vh;
+    width: inherit;
+    display: flex;
+}
+
+.retourstp {
+    position: absolute;
+}
+
+#Redistribution{
+    position:relative;
+    top:-60%;
+}
+
+#textjouer2 {
+    position: absolute;
+    text-align: center;
+
+    font-family: Montserrat, impact, Arial Black;
+    font-size: 2.5vw;
+    margin-top: 0.2vw;
+    margin-left: 0.6vw;
+    color: var(--lightsedonca);
+
+}
+
+#btnvalider2 {
+    position: relative;
+    text-align: center;
+    font-family: Montserrat, impact, Arial Black;
+    font-size: 2.5vw;
+    margin-top: 0.2vw;
+    margin-left: 0.2vw;
+    color: var(--lightsedonca);
+}
+
+#Redistribution2 {
+    position: relative;
+    top: -60%;
+    left:68%;
+}
+
+.bouttonvalider2:hover {
+    box-shadow: 0 0 0 9px var(--lightsedonca);
+    font-size: 120%;
+    position: relative;
+    top: 2%;
+    height: 82%;
+    width: 96%;
+    transition: box-shadow 0.2s ease;
+}

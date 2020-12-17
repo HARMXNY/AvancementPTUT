@@ -1,0 +1,117 @@
+:root{
+	/*couleur héhé*/
+	--lightprima: #DEDEDE;
+	--lightsedonca: #B7B7B7;
+	--lighttercia: #E6E6E6;
+	/*Couleur bases*/
+	--colorbase : #e75259;
+	--colorcarre : #30C0DE;
+	--colorone : #00CBFF;
+	--colortwo : #00FF6E;
+	--colorthree : #C800FF;
+	/*Les formes*/
+	--x : 4vw;
+	--y : 2.5vw; /*taille anneau*/
+	--z : 1.5vw; /*taille rond*/
+	--d : calc(var(--x)/2);
+	--l : calc(var(--x)/2);
+
+
+}
+
+.test{
+	color: black;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("/fonts/MonstMontserrat-Black.woff") format("woff"),
+			url("/fonts/MonstMontserrat-Black.woff2") format("woff2");
+}
+
+a {
+	cursor: pointer;
+	z-index: 60;
+}
+
+
+
+body {
+	background-color: var(--lightprima);
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	/*Desactiver la selection*/
+	-webkit-user-select: none; /* Chrome  / Safari  */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none;
+}
+
+
+#ContainBottom {
+position: absolute;
+margin-left: 25vw;
+height: 12vw;
+width: auto;
+bottom: 0;
+z-index: 20;
+}
+
+#clic{
+position: absolute;
+left: 55vw;
+top : 7vw;
+height: auto;
+width: 15vw;
+}
+
+#card-conteneur{
+z-index: 20;
+position: absolute;
+left: 0vw;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: -7vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

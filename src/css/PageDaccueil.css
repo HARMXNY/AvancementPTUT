@@ -1,0 +1,348 @@
+#pageAccueil {
+    visibility: visible;
+}
+
+#cloud {
+    z-index: 10
+}
+
+#mount1 {
+    z-index: 11;
+}
+
+#mount2 {
+    z-index: 10;
+}
+
+.containerparam{
+    position: absolute;
+    display: flex;
+    margin-left: 1vw;
+}
+
+.containerparam > div {
+    margin-right: 4vh;
+}
+
+.Mode_Forme{
+    height: 10vw;
+    position: relative;
+    margin-left: 6vw;
+}
+
+
+/*Bouton info*/
+#infosec{
+    z-index:15;
+    width: 2vw;
+}
+
+#infosec2{
+    z-index:15;
+    width: 2vw;
+}
+
+#info {
+    color: var(--lightprima);
+    text-decoration: none;
+    font-size: 45px;
+}
+
+#info:hover {
+    color: var(--lightprima);
+}
+
+.activity {
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    -webkit-transition: box-shadow 0.2s ease;
+    -moz-transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    color: #B7B7B7;
+    display: inline-block;
+    font-size: 0.889em;
+    height: 3em;
+    position: relative;
+    text-align: center;
+    text-transform: lowercase;
+    width: 3em;
+    line-height: 3em;
+}
+
+    li a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    li:hover {
+        box-shadow: 0 0 0 7px var(--lightsedonca);
+        font-size:99%;
+        position:relative;
+        right:5%;
+    }
+
+    li:before {
+        border-radius: 50%;
+        bottom: 0;
+        box-shadow: 0 0 0 4px var(--lightsedonca);
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: var(--lightsedonca);
+    }
+
+/*Les règles popups*/
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 21;
+}
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    top:25%;
+}
+
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+        font-family: Tahoma, Arial, sans-serif;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+    }
+
+        .popup .close:hover {
+            color: #06D85F;
+        }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+
+    /*Parametres*/
+
+.popup2 {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    height: 65%;
+    position: relative;
+    top:10%;
+}
+
+.popup2 h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+h3 {
+    margin: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup2 .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+    .popup2 .close:hover {
+        color: #06D85F;
+    }
+.popup2 .content {
+    max-height: 30%;
+}
+
+.titre{
+    display: ruby-base;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 2vw;
+    height: 1vw;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 0.1vw;
+    left: 0.1vw;
+    width: 0.8vw;
+    height: 0.8vw;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background: #bada55;
+}
+
+input:checked + label:after {
+    left: calc(100% - 0.1vw);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 1.4vw;
+}
+/* J'ai trop avancé, mode multi*/
+
+
+#containpseudo {
+    position: absolute;
+    height: 15%;
+    width: 30%;
+    z-index: 12;
+    left: 35%;
+    top: 30%;
+}
+
+.bouttonvalider:hover {
+    box-shadow: 0 0 0 8px var(--lightsedonca);
+    font-size: 99%;
+    position: relative;
+    height: 93%;
+    width:95%;
+    top: 4%;
+    transition: box-shadow 0.2s ease;
+}
+
+#bouttonvalider:hover {
+    box-shadow: 0 0 0 5px var(--lightsedonca);
+    font-size: 120%;
+    position: relative;
+    right: 5%;
+}
+
+#pseudoenter {
+    background-color: red;
+    height: 100%;
+    border-radius: 45px;
+    background-color: #B130DE;
+}
+
+#inputpseudo {
+    position: absolute;
+    width: 99%;
+    height: 65%;
+    border-radius: 30px;
+    font-size: 3vw;
+    background-color: transparent;
+    -moz-appearance: none;
+    text-align: center;
+    color: #707070;
+    border-color: transparent;
+    font-family: impact, Arial Black;
+    z-index: 11;
+}
+
+#fondinput {
+    background-color: red;
+    position: absolute;
+    width: 97%;
+    background-color: var(--lightsedonca);
+    height: 90%;
+    border-radius: 40px;
+    left: 1.5%;
+    top: 5%;
+    z-index: 10;
+}
+
+#buttonadd {
+    position: absolute;
+    top: 30%;
+    right: -12%;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 2vw;
+    background-color: #B130DE;
+    z-index: 18;
+}
+
+#textplus {
+    font-size: 3vw;
+    font-family: arial, Arial Black;
+    position: absolute;
+    margin-top: -0.15vw;
+    margin-left: 0.65vw;
+    color: var(--lightprima);
+}
+
+#containplayers {
+    position: absolute;
+    background-color: transparent;
+    color: var(--lightsedonca);
+    width: 15vw;
+    height: 20vw;
+    z-index: 17;
+    right: 0%;
+    top: 8vw;
+}
+
+.pseudojoueur {
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 3%;
+    margin-right: 10%;
+    font-family: Lucida Console, Arial Black, Arial;
+    font-size: 2vw;
+}
+
+#pseudolist {
+    width: 100%;
+    height: 1.7vw;
+}
+
+/* === FORMES === */
+
