@@ -1,69 +1,60 @@
 var FormeSelect = [];
 var ListeCouleur = ["colorbase","colorcarre","colorone","colortwo","colorthree"]
-function chooseForm(element){
-	//récupérer l'élément
-	var e = document.getElementById(element);
-	//vérifier l'existance
-	var pos = verifPresence(element);	
-	//SI PAS PRESENT
-	/*
-	Faire un systeme pour supprimer de la liste de couleur quand on attribue et ajouter qand on supprime l'élément
+var ListeClassForme = ["rond","carre","triangle","losange","croix","penta","hexa","hocto"]
 
-	*/
-	if(pos == -1){
-		if(FormeSelect.length > 4){
-			alert("non");
-		} else{
-			var couleurdonne = "var(--"+ListeCouleur[0]+")";
-			if(element == 2){ //cas triangle
-				e.style.borderBottom = "var(--y) solid "+couleurdonne;
-			}else if(element == 3){ //cas croix
-				var a = document.getElementById("a");
-				var b = document.getElementById("b");
-				a.style.backgroundColor = couleurdonne;
-				b.style.backgroundColor = couleurdonne;
+//3 modes : 0 = couleurs // 1 = formes // 2 = personnaliser les cartes
+var mode = 0;
 
-			}else{
-				e.style.backgroundColor = couleurdonne;
-			}
-			FormeSelect.push(element);
-			ListeCouleur.splice(0,1)
-		}
-	} else {	
-		var x = e.style.backgroundColor;
-		var x = recupVariable(x);	
-		var couleurdonne = "black";	
-		//transformer la valeur en simplement la variable
-		if(element == 2){ //cas triangle
-			e.style.borderBottom = "var(--y) solid "+couleurdonne;
-		}else if(element == 3){ //cas croix
-			var a = document.getElementById("a");
-			var b = document.getElementById("b");
-			a.style.backgroundColor = couleurdonne;
-			b.style.backgroundColor = couleurdonne;
-		}else{
-			e.style.backgroundColor = couleurdonne;
-		}
-		FormeSelect.splice(pos, 1);
-		ListeCouleur.push(x);
-		//document.documentElement.style.setProperty('--'+couleur, 'black');
+function settingOpen(){
+	var elements = document.getElementsByClassName("pcr-button"); 
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].classList.add(ListeClassForme[i]);
 	}
-	document.getElementById("text").innerHTML = ListeCouleur.length;
-
 }
 
+function SelectShape(shape){
+	//recuperer la forme
+	var forme = "set"+shape;
+	var selection = document.getElementById(forme);
+	//Que si deja selectionne
+	var couleurBase = selection.style.backgroundColor;
+	//deselection
+	if(couleurBase[0] == "v" && couleurBase[1] == "a" && couleurBase[2] == "r"){
+		//supprime de la liste des selectionne
+		var pos = FormeSelect.indexOf(shape);
+		FormeSelect.splice(pos, 1);
+		//recuperer la couleur
+		var recupColor = getVarColor(couleurBase);
+		ListeCouleur.push(recupColor);
+		//mettre a jour la couleur
+		selection.style.backgroundColor  = "#333";
+		//document.getElementById("SettingName").innerHTML = recupColor;
 
-function verifPresence(e){
-	return FormeSelect.indexOf(e);
+
+	}else{ //selection
+		if(FormeSelect.length > 4){
+			alert("NON NON NOOOOOON");
+		} else{
+			FormeSelect.push(shape);
+			//definir la couleur
+			var couleur = "var(--" + ListeCouleur[0] + ")";
+			selection.style.backgroundColor  = couleur;
+			//Supprimer la couleur de la liste
+			ListeCouleur.splice(0, 1);	
+			//document.getElementById("SettingName").innerHTML = ListeCouleur.length;
+		}	
+	}	
 }
 
+function getVarColor(color){
+	var getvar = color;
+	getvar = getvar.substring(6,getvar.length-1);
 
-function recupVariable(v){
-	var value = v;
-	var z = value.length - 1;
-	value = value.substring(6,z);
-
-	return value;
+	return getvar;
 }
 
-
+function varColorToHex(color){
+	hex = getComputedStyle(document.documentElement).getPropertyValue(color);
+	hex = hex.substring(1,hex.length);
+	return hex;
+}

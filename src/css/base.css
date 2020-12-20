@@ -9,10 +9,13 @@
 	--colorone : #00CBFF;
 	--colortwo : #00FF6E;
 	--colorthree : #C800FF;
+	--colorfour : #E6DA27;
+	--colorfive : #2E6DB4;
+	--colorsix : #E6792F;
 	/*Les formes*/
-	--x : 4vw;
-	--y : 2.5vw; /*taille anneau*/
-	--z : 1.5vw; /*taille rond*/
+	--x : 10vw;
+	--y : 7vw; /*taille anneau*/
+	--z : 5vw; /*taille rond*/
 	--d : calc(var(--x)/2);
 	--l : calc(var(--x)/2);
 
@@ -21,12 +24,6 @@
 
 .test{
 	color: black;
-}
-
-@font-face {
-	font-family: "Montserrat";
-	src: url("/fonts/MonstMontserrat-Black.woff") format("woff"),
-			url("/fonts/MonstMontserrat-Black.woff2") format("woff2");
 }
 
 a {

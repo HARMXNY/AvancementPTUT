@@ -40,11 +40,28 @@
     color: var(--lightsedonca);
 }
 
+#btnvalider3 {
+    position: relative;
+    text-align: center;
+    font-family: Montserrat, impact, Arial Black;
+    font-size: 2.5vw;
+    margin-top: 0.2vw;
+    margin-left: 0.2vw;
+    color: var(--lightsedonca);
+}
+
 #Redistribution2 {
     position: relative;
     top: -60%;
     left:68%;
 }
+
+#Redistribution3 {
+    position: relative;
+    top: -60%;
+    left: 50%;
+}
+
 
 .bouttonvalider2:hover {
     box-shadow: 0 0 0 9px var(--lightsedonca);

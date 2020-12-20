@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head lang="fr">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SwishGame</title>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/Resp1.css">
+    <link rel="stylesheet" href="css/Resp2.css">
     <link rel="stylesheet" href="css/Resp3.css">
     <link rel="stylesheet" href="css/PageDaccueil.css">
     <link rel="stylesheet" href="css/PartieGame.css">
+    <link rel="stylesheet" href="css/pickr.min.css">
+    <link rel="stylesheet" href="css/formes.css">
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 </head>
-<body onload="ChoisirPseudo()">
+<body onload="settingOpen()">
 
 
 
@@ -36,7 +42,7 @@
                 <div class="inner">
                     <ul class="activity">
                         <li id="listeinfobtn">
-                            <a id="info" href="#popup2">&#9881;</a>
+                            <a id="info" onclick="settingOpen()" href="#popup2">&#9881;</a>
                         </li>
                     </ul>
                 </div>
@@ -69,69 +75,459 @@
 
         <div id="popup2" class="overlay">
             <div class="popup2">
-                <h2>Les Paramètres :</h2>
-                <a class="close" href="#">&times;</a>
-                <div class="content">
-                    <div class="titre">
-                        <h3 id="text">Mode Forme</h3>
-                    </div>
-                    <div class="Mode_Forme">
-                            <a class="containform" onclick="chooseForm(0)">
-                                <div id="0" class="xanneau">
-                                    <div class="xrondinterieur"></div>
+                <h2 id="SettingName">Param&#232;tres</h2>
+                <a class="close" onclick="SettingClose()" href="#">&times;</a>
+                <div class="content">                    
+                    <div id="couleurs" class="Mode_Setting">
+                        <br><br><br>
+                        <div id="pickrcontner">
+                            <div class="containform">
+                                    <div class="containinte cb rond"></div>
+                                <div class="containexte">
+                                    <div class="color-picker"></div>
                                 </div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(1)">
-                                <div id="1" class="xcarre">
-                                    <div class="xcarreinterieur"></div>
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb carre"></div>
+                                <div class="containexte">
+                                    <div class="color-picker2"></div>
                                 </div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(2)">
-                                <div class="xtrianglerinterieur"></div>
-                                <div id="2" class="xtriangle"></div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(3)">
-                                <div class="croixinté">
-                                    <div class="xcroixgaucheinte"></div>
-                                    <div class="xcroixdroiteinte"></div>
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb castriangle triangle"></div>
+                                <div class="containexte">
+                                    <div class="color-picker3"></div>
                                 </div>
-                                <div id="3" class="croix">
-                                    <div id="a" class="xcroixgauche"></div>
-                                    <div id="b" class="xcroixdroite"></div>
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb losange"></div>
+                                <div class="containexte">
+                                    <div class="color-picker4"></div>
                                 </div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(4)">
-                                <div class="xlosangeinte"></div>
-                                <div id="4" class="xlosange"></div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(5)">
-                                <div class="xtrapezeinte"></div>
-                                <div id="5" class="xtrapeze"></div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(6)">
-                                <div class="xhexainte"></div>
-                                <div id="6" class="xhexa"></div>
-                            </a>
-                            <a class="containform" onclick="chooseForm(7)">
-                                <div class="xoctogoninte"></div>
-                                <div id="7" class="xoctogon"></div>
-                            </a>
-                            
-
-
-
-
-
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb croixinte"></div>
+                                <div class="containexte">
+                                    <div class="color-picker5"></div>
+                                </div>
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb caspenta penta"></div>
+                                <div class="containexte">
+                                    <div class="color-picker6"></div>
+                                </div>
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb hexa"></div>
+                                <div class="containexte">
+                                    <div class="color-picker7"></div>
+                                </div>
+                            </div>
+                            <div class="containform">
+                                    <div class="containinte cb hocto"></div>
+                                <div class="containexte">
+                                    <div class="color-picker8"></div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-
-
-
-                    <h3>Choix Couleur</h3>
                 </div>
             </div>
         </div>
+
+
+        <!-- COLOR PICKER-->
+        <script>
+            let pannel = document.getElementById("pannel");
+            // Simple example, see optional options for more configuration.
+            var couleur1 = varColorToHex('--colorbase');
+            var couleur2 = varColorToHex('--colorcarre');
+            var couleur3 = varColorToHex('--colorone');
+            var couleur4 = varColorToHex('--colortwo');
+            var couleur5 = varColorToHex('--colorthree');
+            var couleur6 = varColorToHex('--colorfour');
+            var couleur7 = varColorToHex('--colorfive');
+            var couleur8 = varColorToHex('--colorsix');
+            const pickr = Pickr.create({
+                el: '.color-picker',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur1,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr2 = Pickr.create({
+                el: '.color-picker2',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur2,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr3 = Pickr.create({
+                el: '.color-picker3',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur3,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr4 = Pickr.create({
+                el: '.color-picker4',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur4,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr5 = Pickr.create({
+                el: '.color-picker5',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur5,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr6 = Pickr.create({
+                el: '.color-picker6',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur6,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr7 = Pickr.create({
+                el: '.color-picker7',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur7,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+            const pickr8 = Pickr.create({
+                el: '.color-picker8',
+                theme: 'classic', // or 'monolith', or 'nano'
+                default: couleur8,
+
+                swatches: [
+                    '#df0024',
+                    '#f3c300',
+                    '#00ab9f',
+                    '#2e6db4',
+                    '#1bff7e',
+                    '#fe1b00',
+                    '#7f00ff',
+                    '#29F073',
+                    '#E6792F',
+                    '#E6DA27',
+                    '#E8695A',
+                    '#2E294E',
+                    '#64A6BD',
+                    '#659157'
+                ],
+
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: false,
+                    hue: true,
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: true
+                    }
+                }
+            });
+
+
+
+
+            //changement de couleur
+            pickr.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorbase', newcouleur);
+            });
+            pickr2.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorcarre', newcouleur);
+            });
+            pickr3.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorone', newcouleur);
+            });
+            pickr4.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colortwo', newcouleur);
+            });
+            pickr5.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorthree', newcouleur);
+            });
+            pickr6.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorfour', newcouleur);
+            });
+            pickr7.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorfive', newcouleur);
+            });
+            pickr8.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                let newcouleur = `rgba(${color[0]},${color[1]},${color[2]},${color[3]}`
+                document.documentElement.style.setProperty('--colorsix', newcouleur);
+            });
+
+
+        </script>
+
+
+
 
         <!--
         <div id="containpseudo">
@@ -192,7 +588,7 @@
     <div id="pageGame">
         <div class="menuhaut">
             <div id="Redistribution">
-                <a onclick="creePartieDeTest()" id="relancerbtn">
+                <a onclick="redistribuer()" id="relancerbtn">
                     <div id="contourbuttonvalider">
                         <div class="bouttonvalider">
                             <h1 id="textjouer2">RELANCER</h1>
@@ -201,10 +597,19 @@
                 </a>
             </div>
             <div id="Redistribution2">
-                <a id="relancerbtn" onclick="test()">
+                <a id="relancerbtn" onclick="testPourJeuClassique()">
                     <div id="contourbuttonvalider">
                         <div class="bouttonvalider2">
                             <h1 id="btnvalider2">VALIDER</h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="Redistribution3">
+                <a id="relancerbtn" onclick="chercheCombi2()">
+                    <div id="contourbuttonvalider">
+                        <div class="bouttonvalider2">
+                            <h1 id="btnvalider3">CHERCHER</h1>
                         </div>
                     </div>
                 </a>

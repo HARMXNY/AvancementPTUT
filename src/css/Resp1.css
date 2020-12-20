@@ -1,0 +1,321 @@
+/*Demi Ecran*/
+@media screen and (max-width: 960px) and (min-height: 600px) {
+    .anneau {
+        box-sizing: border-box;
+        background-color: #FFD100;
+        border-radius: 3vw;
+        height: inherit;
+        width: inherit;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .rondinterieur {
+        background-color: var(--lighttercia);
+        height: 3vw;
+        width: 3vw;
+        display: table;
+        margin: 0 auto;
+        border-radius: 3vw;
+    }
+
+    .containform {
+        box-sizing: content-box;
+        height: 6vw;
+        width: 6vw;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .rond {
+        display: table;
+        margin: 0 auto;
+        background-color: #FFD100;
+        height: 3vw;
+        width: 3vw;
+        border-radius: 3vw;
+    }
+
+    /* PARTIE CARRE */
+    .carre {
+        background-color: #30C0DE;
+        height: inherit;
+        width: inherit;
+        display: table-cell;
+        vertical-align: middle
+    }
+
+    .carreinterieur {
+        background-color: var(--lightsedonca);
+        height: 3vw;
+        width: 3vw;
+        display: table;
+        margin: 0 auto;
+    }
+
+    .pcarre {
+        display: table;
+        margin: 0 auto;
+        background-color: #30C0DE;
+        height: 3vw;
+        width: 3vw;
+    }
+
+    /* PARTIE TRIANGLE */
+    .triangle {
+        display: table;
+        margin: 0 auto;
+        border-left: 2.5vw solid transparent;
+        border-right: 2.5vw solid transparent;
+        border-bottom: 5vw solid #DEA430;
+    }
+
+    .trianglerinterieur {
+        position: absolute;
+        margin-left: -1.5vw;
+        margin-top: 1.25vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-bottom: 3vw solid var(--lightsedonca);
+    }
+
+    .ptriangle {
+        display: table;
+        margin: 0 auto;
+        margin-top: 0.75vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-bottom: 3vw solid #DEA430;
+    }
+
+    /* TRAPEZE */
+    .trapeze {
+        bottom: 0px;
+        height: 0;
+        margin-top: 2.58vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-top: 3vw solid #6FDE30;
+    }
+
+    .triangletrapeze {
+        padding-top: 0.1vw;
+        position: absolute;
+        border-left: 3vw solid transparent;
+        border-right: 3vw solid transparent;
+        border-bottom: 2.5vw solid #6FDE30;
+    }
+
+    .trapezeinte {
+        position: absolute;
+        margin-top: 3vw;
+        margin-left: 1.25vw;
+        width: 2vw;
+        border-left: 0.75vw solid transparent;
+        border-right: 0.75vw solid transparent;
+        border-top: 1.5vw solid var(--lightsedonca);
+        z-index: 15;
+    }
+
+    .triangletrapezeinte {
+        position: absolute;
+        margin-top: 1.45vw;
+        margin-left: 1.25vw;
+        padding-top: 0.1vw;
+        border-left: 1.75vw solid transparent;
+        border-right: 1.75vw solid transparent;
+        border-bottom: 1.5vw solid var(--lightsedonca);
+        z-index: 15;
+    }
+
+    .trapezep {
+        display: table;
+        margin: 0 auto;
+        margin-top: 2vw;
+        width: 2vw;
+        border-left: 0.75vw solid transparent;
+        border-right: 0.75vw solid transparent;
+        border-top: 1.5vw solid #6FDE30;
+        z-index: 15;
+    }
+
+    .triangletrapezep {
+        position: absolute;
+        margin-top: 0.55vw;
+        margin-left: 1.25vw;
+        border-left: 1.75vw solid transparent;
+        border-right: 1.75vw solid transparent;
+        border-bottom: 1.5vw solid #6FDE30;
+        z-index: 15;
+    }
+
+    .losangephaut {
+        display: table;
+        margin: 0 auto;
+        margin-top: -3vw;
+        border-left: 3vw solid transparent;
+        border-right: 3vw solid transparent;
+        border-bottom: 3vw solid #B130DE;
+    }
+
+    .losangepbas {
+        position: absolute;
+        border-left: 3vw solid transparent;
+        border-right: 3vw solid transparent;
+        border-top: 3vw solid #B130DE;
+    }
+
+    .losangephauti {
+        display: table;
+        margin: 0 auto;
+        margin-top: -1.5vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-bottom: 1.5vw solid var(--lightsedonca);
+    }
+
+    .losangepbasi {
+        position: absolute;
+        margin-left: 1.5vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-top: 1.5vw solid var(--lightsedonca);
+    }
+
+    .losangephautc {
+        display: table;
+        margin: 0 auto;
+        margin-top: -1.5vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-bottom: 1.5vw solid #B130DE;
+    }
+
+    .losangepbasc {
+        position: absolute;
+        margin-left: 1.5vw;
+        border-left: 1.5vw solid transparent;
+        border-right: 1.5vw solid transparent;
+        border-top: 1.5vw solid #B130DE;
+    }
+
+    .buttonretour {
+        position: relative;
+        height: 4vh;
+        width: 4vh;
+        border-radius: 55vw;
+        background-color: var(--lightsedonca);
+        z-index: 5;
+        margin-left: 2vw;
+        top: 1.75vw;
+    }
+
+    .flex-item {
+        background: var(--lightsedonca);
+        width: 10vw;
+        height: 13vw;
+        border-radius: 2vw;
+        padding-right: 0.4vw;
+        padding-left: 0.4vw;
+        padding-bottom: 0.8vw;
+        padding-top: 0.4vw;
+        list-style: none;
+        display: flex;
+        margin-right: 1.75vw;
+        margin-left: 1.75vw;
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .item-form {
+        width: 4vw;
+        padding-left: 0.1vw;
+        margin-top: 0.25vw;
+        height: 4vw;
+        border-radius: 10px;
+        background-color: var(--lighttercia);
+    }
+
+    .containcards {
+        height: 87vh;
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 10vw;
+        padding-top: 2.5vw;
+    }
+
+    .logop2 img {
+        width: 20vh;
+        padding-top: 1vh;
+        position: relative;
+        left: 38vw;
+    }
+
+    .txt {
+        position: absolute;
+        font-family: Arial Black;
+        color: var(--lightprima);
+        font-size: 2.5vw;
+        left: 1vw;
+        top: -1vh;
+    }
+
+    .logo img {
+        position: absolute;
+        width: 25vw;
+        left: 38vw;
+        top: 13%;
+        z-index: 11;
+    }
+
+    .mounts img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        margin-left: -1vw;
+        margin-top: -1vw;
+        object-fit: cover;
+    }
+
+    #contourbuttonvalider {
+        position: absolute;
+        border-radius: 45px;
+        left: 3vw;
+        top: 5.5vw;
+        height: 9vw;
+        width: 25vw;
+        background-color: var(--lightsedonca);
+        z-index: 15;
+    }
+
+    .bouttonvalider {
+        position: absolute;
+        height: 6.8vw;
+        width: 22.8vw;
+        top: 1.1vw;
+        left: 1.1vw;
+        border-radius: 30px;
+        background-color: #B130DE;
+    }
+
+    .bouttonvalider2 {
+        position: absolute;
+        height: 6.8vw;
+        width: 22.8vw;
+        top: 1.1vw;
+        left: 1.1vw;
+        border-radius: 30px;
+        background-color: #00CC66;
+    }
+
+    #textjouer {
+        font-family: Montserrat, impact, Arial Black;
+        position: absolute;
+        font-size: 5vw;
+        margin-top: 0.2vw;
+        margin-left: 5.5vw;
+        color: var(--lightsedonca);
+    }
+}

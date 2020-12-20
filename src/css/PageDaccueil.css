@@ -24,11 +24,92 @@
     margin-right: 4vh;
 }
 
-.Mode_Forme{
-    height: 10vw;
-    position: relative;
-    margin-left: 6vw;
+/*SETTINGS*/
+#forme{
+    visibility: hidden;
 }
+
+#couleurs{
+    z-index: 1;
+}
+
+.pannel{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+#pickrcontner{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.Mode_Setting{
+    height: 20vw;
+    position: relative;
+    margin : 0 auto;
+}
+#BottomSetings{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5vw;
+    width: 100%;
+    border-radius: 0 0 0.3vw 0.3vw;
+}
+
+#SettingBefore{
+    height: 5vw;
+    width: 5vw;
+    background-color: var(--lightsedonca);
+    color: black;
+    font-size: 3vw;
+    visibility: collapse;
+}
+#SettingAfter{
+    bottom: 5vw;
+    position: relative;
+    height: 5vw;
+    width: 5vw;
+    background-color: var(--lightsedonca);
+    float: right;
+}
+
+#testSettings{
+    position: absolute;
+    color: black;
+    bottom: 0;
+    left: 18vw;
+}
+
+
+#ShapeSettings{
+    height: 100%;
+    width: 100%;
+    margin: auto 2vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ShapeContener{
+    height: 9vw;
+    width: 9vw;
+    margin-left: 1vw;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+.settingShape{
+    background-color: #333;
+}
+
+.Colorone{background-color: var(--colorbase);}
+.Colortwo{background-color: var(--colorcarre);}
+.Colorthree{background-color: var(--colorone);}
+.Colorfour{background-color: var(--colortwo);}
+.Colorfive{background-color: var(--colorthree);}
+
 
 
 /*Bouton info*/
@@ -345,4 +426,32 @@ label:active:after {
 }
 
 /* === FORMES === */
+
+.contentButton{
+    height: 3vw;
+    width: 15%;
+    margin : 0 auto;
+    position: relative;
+    bottom: 5vw;
+}
+
+.buttonvalidersettings{
+    height: 100%;
+    width: 100%;
+    border-style: none;
+    background-color: red;
+    color: white;
+    font-family: arial;
+    font-size: 2vw;
+    border-radius: 15px;
+}
+
+.buttonvalidersettings:active{
+    background-color: blue;
+}
+
+
+
+
+
 
