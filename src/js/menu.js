@@ -12,38 +12,21 @@ function settingOpen(){
 	}
 }
 
-function SelectShape(shape){
-	//recuperer la forme
-	var forme = "set"+shape;
-	var selection = document.getElementById(forme);
-	//Que si deja selectionne
-	var couleurBase = selection.style.backgroundColor;
-	//deselection
-	if(couleurBase[0] == "v" && couleurBase[1] == "a" && couleurBase[2] == "r"){
-		//supprime de la liste des selectionne
-		var pos = FormeSelect.indexOf(shape);
-		FormeSelect.splice(pos, 1);
-		//recuperer la couleur
-		var recupColor = getVarColor(couleurBase);
-		ListeCouleur.push(recupColor);
-		//mettre a jour la couleur
-		selection.style.backgroundColor  = "#333";
-		//document.getElementById("SettingName").innerHTML = recupColor;
+function disableCache(formName){
+	cacheName = "cache"+formName;
+	document.getElementById(cacheName).style.display = "none";
+	FormeSelect.push(form);
 
+	//document.getElementById("SettingName").innerHTML = FormeSelect.length;
+}
 
-	}else{ //selection
-		if(FormeSelect.length > 4){
-			alert("NON NON NOOOOOON");
-		} else{
-			FormeSelect.push(shape);
-			//definir la couleur
-			var couleur = "var(--" + ListeCouleur[0] + ")";
-			selection.style.backgroundColor  = couleur;
-			//Supprimer la couleur de la liste
-			ListeCouleur.splice(0, 1);	
-			//document.getElementById("SettingName").innerHTML = ListeCouleur.length;
-		}	
-	}	
+function ableCache(formName){
+	cacheName = "cache"+formName;
+	const pos = FormeSelect.indexOf(formName);
+	if (pos > -1) {
+	  FormeSelect.splice(pos, 1);
+	}
+	document.getElementById(cacheName).style.display = "block";
 }
 
 function getVarColor(color){

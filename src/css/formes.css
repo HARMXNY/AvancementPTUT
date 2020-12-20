@@ -23,6 +23,10 @@
     top: calc(var(--x)/8);
 }
 
+#cacherond{
+    display: none;
+}
+
 .containinte{
     /*PROBLEME SIZE*/
     top: calc((var(--x) - var(--z)) / 2.2);
@@ -31,6 +35,17 @@
     width: var(--z);
     z-index: 2;
     position: absolute;
+}
+
+.cache{
+    top: calc((var(--x) - var(--y)) / 2.8);
+    left: calc((var(--x) - var(--y)) / 2.2);
+    height: calc(var(--y)*1.05);
+    width: calc(var(--y)*1.05);
+    z-index: 2;
+    position: absolute;
+    z-index: 15;
+
 }
 
 .rond{
