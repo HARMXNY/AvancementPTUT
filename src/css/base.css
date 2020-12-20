@@ -15,7 +15,7 @@
 	/*Les formes*/
 	--x : 10vw;
 	--y : 7vw; /*taille anneau*/
-	--z : 5vw; /*taille rond*/
+	--z : 3.75vw; /*taille rond*/
 	--d : calc(var(--x)/2);
 	--l : calc(var(--x)/2);
 

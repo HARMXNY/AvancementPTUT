@@ -27,9 +27,67 @@
     display: none;
 }
 
+#formSize{
+    margin : 0 auto;
+    width: 100%;
+    height: 3vw;
+}
+
+.slider-container .bar .fill {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: #6200ee;
+}
+
+.slider-container .slider {
+    position: relative;
+    z-index: 2;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+}
+.slider.container{
+    position: relative;
+}
+.slider-container .bar {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top : 23vw;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #c6aee7;
+    overflow: hidden;
+}
+/*Moz*/
+.slider-container .slider::-moz-range-thumb  {
+    -webkit-appearance: none;
+    width: 1vw;
+    height: 1vw;
+    background-color: #6200ee;
+    border-radius: 1vw;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 0 0 rgba(98, 0 ,238, .1);
+    transition: .3s ease-in-out;
+}
+
+.slider-container .slider::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(98,0,238,.1);
+}
+.slider-container .slider:active::-moz-range-thumb {
+    box-shadow: 0 0 0 20px rgba(98,0,238,.2);
+}
+
+
 .containinte{
     /*PROBLEME SIZE*/
-    top: calc((var(--x) - var(--z)) / 2.2);
+    top: calc((var(--x) - var(--z)) / 2.4);
     left: calc((var(--x) - var(--z)) / 2);
     height: var(--z);
     width: var(--z);

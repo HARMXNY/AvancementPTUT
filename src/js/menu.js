@@ -4,6 +4,7 @@ var ListeClassForme = ["rond","carre","triangle","losange","croix","penta","hexa
 
 //3 modes : 0 = couleurs // 1 = formes // 2 = personnaliser les cartes
 var mode = 0;
+var valRange;
 
 function settingOpen(){
 	var elements = document.getElementsByClassName("pcr-button"); 
@@ -18,6 +19,12 @@ function disableCache(formName){
 	FormeSelect.push(form);
 
 	//document.getElementById("SettingName").innerHTML = FormeSelect.length;
+}
+
+function changeContour(value){
+	var newvalue = value * 0.055 + 1;
+	document.documentElement.style.setProperty('--z', newvalue+'vw');
+	//document.getElementById("SettingName").innerHTML = newvalue;
 }
 
 function ableCache(formName){
