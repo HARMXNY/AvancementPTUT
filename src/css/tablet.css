@@ -1,0 +1,79 @@
+/*DemTéléphone 1i Ecran*/
+@media screen and (min-width: 669px) and (max-width: 992px) {
+    body{
+        background-color: red;
+    }
+    .logop2 img {
+        width: 20vh;
+        padding-top: 1vh;
+        position: relative;
+        left: 27vw;
+    }
+
+    .txt {
+        position: absolute;
+        font-family: Arial Black;
+        color: var(--lightprima);
+        font-size: 5.5vw;
+        left: 2.25vw;
+        top: -1vh;
+    }
+
+    .logo img { 
+        position: absolute;
+        width: 45vw;
+        left: 28vw;
+        top: 13%;
+        z-index: 11;
+    }
+
+    .mounts img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        margin-left: -1vw;
+        margin-top: -1vw;
+        object-fit: cover;
+    }
+
+    #contourbuttonvalider {
+        position: absolute;
+        border-radius: 45px;
+        left: -10vw;
+        top: 5.5vw;
+        height: 15vw;
+        width: 50vw;
+        background-color: var(--lightsedonca);
+        z-index: 15;
+    }
+
+    .bouttonvalider {
+        position: absolute;
+        height: 13vw;
+        width: 47vw;
+        top: 1.1vw;
+        left: 1.5vw;
+        border-radius: 30px;
+        background-color: #B130DE;
+    }
+
+    .bouttonvalider2 {
+        position: absolute;
+        height: 6.8vw;
+        width: 22.8vw;
+        top: 1.1vw;
+        left: 1.1vw;
+        border-radius: 30px;
+        background-color: #00CC66;
+    }
+
+    #textjouer {
+        font-family: Montserrat, impact, Arial Black;
+        position: absolute;
+        font-size: 10vw;
+        margin-top: 0.2vw;
+        margin-left: 12.5vw;
+        color: var(--lightsedonca);
+    }
+}
