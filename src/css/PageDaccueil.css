@@ -8,6 +8,7 @@
 
 #mount1 {
     z-index: 11;
+    position: absolute;
 }
 
 #mount2 {
@@ -331,19 +332,14 @@ label:active:after {
 
 .bouttonvalider:hover {
     box-shadow: 0 0 0 8px var(--lightsedonca);
-    font-size: 99%;
+    font-size: 100%;
     position: relative;
-    height: 93%;
-    width:95%;
-    top: 4%;
     transition: box-shadow 0.2s ease;
 }
 
 #bouttonvalider:hover {
     box-shadow: 0 0 0 5px var(--lightsedonca);
-    font-size: 120%;
     position: relative;
-    right: 5%;
 }
 
 #pseudoenter {
@@ -379,6 +375,33 @@ label:active:after {
     top: 5%;
     z-index: 10;
 }
+
+
+
+#modeprec{
+    height: 100%;
+    width: 15%;
+    float: left;
+    position: relative;
+}
+
+#modesuiv{
+    height: 100%;
+    width: 15%;
+    float: right;
+    position: relative;
+}
+
+#textdumode{
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+}
+
+
+
+
 
 #buttonadd {
     position: absolute;

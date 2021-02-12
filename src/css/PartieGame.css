@@ -9,24 +9,38 @@
     display: flex;
 }
 
+/*Partie Menu du haut*/
+.menu{
+    align-items: center;
+    justify-content: center;
+}
+
+
 .retourstp {
     position: absolute;
 }
 
 #Redistribution{
     position:relative;
-    top:-60%;
+    top:-3vw;
+}
+
+
+#affSolution {
+    text-align: center;
+    font-family: Montserrat, impact, Arial Black;
+    font-size: 2.5vw;
+    color: var(--lightsedonca);
+    width: inherit;
 }
 
 #textjouer2 {
     position: absolute;
     text-align: center;
-
     font-family: Montserrat, impact, Arial Black;
-    font-size: 2.5vw;
-    margin-top: 0.2vw;
-    margin-left: 0.6vw;
+    margin-top: 0.6vw;
     color: var(--lightsedonca);
+    width: inherit;
 
 }
 
@@ -52,23 +66,44 @@
 
 #Redistribution2 {
     position: relative;
-    top: -60%;
+    top:-3vw;
     left:68%;
 }
 
 #Redistribution3 {
     position: relative;
-    top: -60%;
+    top:-3vw;
     left: 50%;
 }
 
 
 .bouttonvalider2:hover {
-    box-shadow: 0 0 0 9px var(--lightsedonca);
-    font-size: 120%;
+    box-shadow: 0 0 0 8px var(--lightsedonca);
+    font-size: 100%;
     position: relative;
-    top: 2%;
-    height: 82%;
-    width: 96%;
     transition: box-shadow 0.2s ease;
+}
+
+#progressbar
+{
+  position : relative;
+  width: 1100px;
+  padding:1px;
+  background-color:white;
+  border:1px solid black;
+  height:10px;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+#indicateur
+{
+  width: 800px;
+  background-color : green;
+  height:10px;
+  margin: 0;
+
 }

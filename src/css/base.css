@@ -13,13 +13,13 @@
 	--colorfive : #2E6DB4;
 	--colorsix : #E6792F;
 	/*Les formes*/
+	--u: calc(var(--x) / 2.75);
+	--v: calc(var(--y) / 2.75);
+	--w: calc(var(--z) / 2.75);
+	/*Les formes settings*/
 	--x : 10vw;
-	--y : 7vw; /*taille anneau*/
-	--z : 3.75vw; /*taille rond*/
-	--d : calc(var(--x)/2);
-	--l : calc(var(--x)/2);
-
-
+	--y : 7vw;
+	--z : 3.75vw;
 }
 
 .test{
@@ -43,16 +43,6 @@ body {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE 10+ */
 	user-select: none;
-}
-
-
-#ContainBottom {
-position: absolute;
-margin-left: 25vw;
-height: 12vw;
-width: auto;
-bottom: 0;
-z-index: 20;
 }
 
 #clic{

@@ -10,19 +10,63 @@ var darktercia = "#606060";
 var carteselect = [];
 var deckPartie = []; //Ensemble des cartes affichees a l'ecran
 var TasDuJEU = []; // Ensemble de toutes les cartes presente dans le jeu
+var allMode = ["Solo", "Infini"]; // Défini tout les modes de Jeu
+var allDimension = ["4 * 3", "3 * 3", "3 * 2"];
+var selectionMode = 0;
+var selectionDiemension = 0;
 
+var lesPoints = 0; //Points du Joueur1
 
+function majSizeCard(column){
+	var newTaille = column * 3.2 + 1;
+	document.documentElement.style.setProperty('--taille', newTaille + "vh");
+}
 
+function modePrec() {
+	if (selectionMode == 0) {
+		selectionMode = allMode.length - 1;
+	} else {
+		selectionMode -= 1;
+	}
+	document.getElementById("textmode").textContent = "" + allMode[selectionMode]
+}
+
+function modeSuiv() {
+	if (selectionMode == allMode.length - 1) {
+		selectionMode = 0;
+	} else {
+		selectionMode += 1;
+	}
+	document.getElementById("textmode").textContent = "" + allMode[selectionMode]
+}
+
+function dimensionPrec() {
+	if (selectionDiemension == 0) {
+		selectionDiemension = allDimension.length - 1;
+	} else {
+		selectionDiemension -= 1;
+	}
+	document.getElementById("textdimension").textContent = "" + allDimension[selectionDiemension]
+}
+
+function dimensionSuiv() {
+	if (selectionDiemension == allDimension.length - 1) {
+		selectionDiemension = 0;
+	} else {
+		selectionDiemension += 1;
+	}
+	document.getElementById("textdimension").textContent = "" + allDimension[selectionDiemension]
+}
 
 
 class Carte {
 
-	constructor(id, allFigure/*,row,column,nbForme*/) { //a decommenter quand il y aura des prametres de partie
+	constructor(id, allFigure, nbRow, nbColumn/*,nbForme*/) { //a decommenter quand il y aura des prametres de partie
 		//Attribut de Classe
 		this.identifiant = id;
-		this.row = 4 /*row*/;
-		this.column = 3 /*column*/;
-		this.Matrice = creaMatrice(this.row, this.column);
+		this.row = nbRow;
+		this.column = nbColumn;
+		this.Matrice = creaMatrice(nbRow, nbColumn);
 		this.SesFigures = [];
 		for (var i = 0; i < allFigure.length; i++) {
 			this.SesFigures.push(allFigure[i]);
@@ -37,7 +81,7 @@ class Carte {
 		divconteneur.className = "flex-item";
 		divconteneur.id = "card" + this.identifiant;
 
-		for (var i = 0; i < 12; i++) {
+		for (var i = 0; i < this.row * this.column; i++) {
 
 			var divcase = document.createElement('div');
 			divcase.className = "item-form";
@@ -171,6 +215,7 @@ class Figure {
 
 						var divContainForm = document.createElement('div');
 						divContainForm.className = "containform";
+						divContainForm.classList.add("ajustementGrandeForme");
 
 						var unCercle = document.createElement('div');
 						unCercle.className = "anneau";
@@ -198,6 +243,7 @@ class Figure {
 
 						var divContainForm = document.createElement('div');
 						divContainForm.className = "containform";
+						divContainForm.classList.add("ajustementPetiteForme");
 
 						var unRond = document.createElement('div');
 						unRond.className = "rond";
@@ -256,24 +302,17 @@ const TypeFigure = {
 
 function journuit() {
 	//mode jour
+	mode = mode + 1;
 	if (mode % 2 == 0) {
 		//changer logo swish
 		document.getElementById("imglogo").src = "imgs/swishjour.png";
 		document.getElementById("imglogo2").src = "imgs/swishjour.png";
-		/*
-		MESSAGE POUR CEUX QUI FONT LES TESTS ! Recommentez les lignes après ! Merci
-		*/
-		//document.getElementById("fondinput").style.backgroundColor = lightsedonca;
 		document.getElementById("contourbuttonvalider").style.backgroundColor = lightsedonca;
-		//document.getElementById("textjouer").style.color = lightsedonca;
-		//document.getElementById("textplus").style.color = lightprima;
 		//changer montagnesfond
 		document.getElementById("mount1").src = "imgs/mount1.png";
 		document.getElementById("mount2").src = "imgs/mount2.png";
 		//nuages
 		document.getElementById("cloud").src = "imgs/lightcloud.png";
-		//changer background color
-		//document.getElementById("containplayers").style.color = lightsedonca;
 		//maj couleur principales
 		document.documentElement.style.setProperty('--lightprima', lightprima);
 		document.documentElement.style.setProperty('--lightsedonca', lightsedonca);
@@ -284,39 +323,55 @@ function journuit() {
 		//changer logo swish
 		document.getElementById("imglogo").src = "imgs/swishnuit.png";
 		document.getElementById("imglogo2").src = "imgs/swishnuit.png";
-
-		//document.getElementById("fondinput").style.backgroundColor = darkseconda;
 		document.getElementById("contourbuttonvalider").style.backgroundColor = darkseconda;
-		//document.getElementById("textjouer").style.color = darkseconda;
-		//document.getElementById("textplus").style.color = darkprima;
 		//changer montagnesfond
 		document.getElementById("mount1").src = "imgs/darkmount1.png";
 		document.getElementById("mount2").src = "imgs/darkmount2.png";
 		//nuages
 		document.getElementById("cloud").src = "imgs/darkcloud.png";
-		//mode nuit
-		//document.getElementById("containplayers").style.color = darkseconda;
 		//maj couleur principales
 		document.documentElement.style.setProperty('--lightprima', darkprima);
 		document.documentElement.style.setProperty('--lightsedonca', darkseconda);
 		document.documentElement.style.setProperty('--lighttercia', darktercia);
 	}
-	mode = mode + 1;
 }
 
 //===================================================================================
 //FONCTION GESTION DE GAME
 
 function lancerpartie() {
-	document.getElementById("pageAccueil").style.visibility = "hidden";
+	var ready = true;
 	//fonction de creation de partie a changer en fonction du test voulu
-	creePartieClassique();
-	document.getElementById("pageGame").style.visibility = "visible";
+	if (selectionMode == 0) {
+		if (selectionDiemension == 0) {
+			creePartieClassique3_4();
+		} else if (selectionDiemension == 1) {
+			ready = false;
+			window.alert("Mode de Jeu indisponible pour le moment")
+		} else if (selectionDiemension == 2) {
+			ready = false;
+			window.alert("Mode de Jeu indisponible pour le moment")
+		}
+
+	} else if (selectionMode == 1) {
+		if (selectionDiemension == 0) {
+			creePartieInfini(4, 3);
+		} else if (selectionDiemension == 1) {
+			creePartieInfini(3, 3);
+		} else if (selectionDiemension == 2) {
+			creePartieInfini(3, 2);
+		}
+	}
+	if (ready) {
+		document.getElementById("pageAccueil").style.visibility = "hidden";
+		document.getElementById("pageGame").style.visibility = "visible";
+	}
 }
 
 function retour() {
 	document.getElementById("pageAccueil").style.visibility = "visible";
 	document.getElementById("pageGame").style.visibility = "hidden";
+	window.location.reload();
 }
 
 function rechargerGAME() {
@@ -326,6 +381,18 @@ function rechargerGAME() {
 	for (var i = 0; i < deckPartie.length; i++) {
 		document.getElementById("containcards").appendChild(deckPartie[i].getHTML);
 	}
+}
+
+function redistribuerPlateau() {
+	if (selectionMode == 0) {
+		redistribuer();
+	} else if (selectionMode == 1) {
+		for (var i = 0; i < 16; i++) {
+			remplacerLaCarte(deckPartie[i])
+		}
+	}
+	afficherCartes(deckPartie);
+
 }
 
 function redistribuer() {
@@ -369,13 +436,13 @@ function genererTouteslesCartes3_4Possibles() {
 			AllFigure.push(new Figure(new Array(TypeFigure.Petit), FormeFigure.Rond, 0, j));
 			if (i != 3 * j) {
 				AllFigure.push(new Figure(new Array(TypeFigure.Moyen), FormeFigure.Rond, i % 3, Math.floor(i / 3)));
-				var uneCarte = new Carte(deckPartie.length + 1, AllFigure);
+				var uneCarte = new Carte(deckPartie.length + 1, AllFigure, 4, 3);
 				deckPartie.push(uneCarte);
 				if (!doublonInterdit(uneCarte)) {
 					AllFigure = [];
 					AllFigure.push(new Figure(new Array(TypeFigure.Petit), FormeFigure.Rond, 0, j));
 					AllFigure.push(new Figure(new Array(TypeFigure.Moyen), FormeFigure.Rond, i % 3, Math.floor(i / 3)));
-					var unDoublon = new Carte(deckPartie.length + 1, AllFigure);
+					var unDoublon = new Carte(deckPartie.length + 1, AllFigure, 4, 3);
 					deckPartie.push(unDoublon);
 				}
 			}
@@ -388,13 +455,13 @@ function genererTouteslesCartes3_4Possibles() {
 			if (i != 3 * j + 1) {
 				if (i != 2 && i != 5 && i != 8 && i != 11) {
 					AllFigure.push(new Figure(new Array(TypeFigure.Moyen), FormeFigure.Rond, i % 3, Math.floor(i / 3)));
-					var uneCarte = new Carte(deckPartie.length + 1, AllFigure);
+					var uneCarte = new Carte(deckPartie.length + 1, AllFigure, 4, 3);
 					deckPartie.push(uneCarte);
 					if (!doublonInterdit(uneCarte)) {
 						AllFigure = [];
 						AllFigure.push(new Figure(new Array(TypeFigure.Petit), FormeFigure.Rond, 1, j));
 						AllFigure.push(new Figure(new Array(TypeFigure.Moyen), FormeFigure.Rond, i % 3, Math.floor(i / 3)));
-						var unDoublon = new Carte(deckPartie.length + 1, AllFigure);
+						var unDoublon = new Carte(deckPartie.length + 1, AllFigure, 4, 3);
 						deckPartie.push(unDoublon);
 					}
 				}
@@ -413,7 +480,7 @@ function afficherCartes(Liste) {
 	}
 }
 
-function creePartieClassique() {
+function creePartieClassique3_4() {
 	TasDuJEU = genererTouteslesCartes3_4Possibles();
 	deckPartie = [];
 	for (var i = 0; i < TasDuJEU.length; i++) {
@@ -452,7 +519,7 @@ function creePartieClassique() {
 	afficherCartes(deckPartie);
 }
 
-function creePartieInfini() {
+function creePartieInfini(nbRow, nbColum) {
 	deckPartie = [];
 	carteselect = [];
 	while (document.getElementById("containcards").firstElementChild != null) {
@@ -463,20 +530,20 @@ function creePartieInfini() {
 		var AllFigure = [];
 		var Cox1, Coy1, Cox2, Coy2;
 
-		Cox1 = getRandom(0, 2);
-		Coy1 = getRandom(0, 3);
+		Cox1 = getRandom(0, nbColum - 1);
+		Coy1 = getRandom(0, nbRow - 1);
 		AllFigure.push(new Figure(new Array(TypeFigure.Petit), FormeFigure.Rond, Cox1, Coy1));
 
-		Cox2 = getRandom(0, 2);
-		Coy2 = getRandom(0, 3);
+		Cox2 = getRandom(0, nbColum - 1);
+		Coy2 = getRandom(0, nbRow - 1);
 
 		while (Cox2 == Cox1 && Coy1 == Coy2) {
-			Cox2 = getRandom(0, 2);
-			Coy2 = getRandom(0, 3);
+			Cox2 = getRandom(0, nbColum - 1);
+			Coy2 = getRandom(0, nbRow - 1);
 		}
 		AllFigure.push(new Figure(new Array(TypeFigure.Moyen), FormeFigure.Rond, Cox2, Coy2));
 		//Code de Generation de Figure
-		var uneCarte = new Carte(j, AllFigure);
+		var uneCarte = new Carte(j, AllFigure, nbRow, nbColum);
 
 		deckPartie.push(uneCarte);
 
@@ -534,20 +601,20 @@ function remplacerLaCarte(uneCarte) {
 	var AllFigure = [];
 	var Cox1, Coy1, Cox2, Coy2;
 
-	Cox1 = getRandom(0, 2);
-	Coy1 = getRandom(0, 3);
+	Cox1 = getRandom(0, uneCarte.column - 1);
+	Coy1 = getRandom(0, uneCarte.row - 1);
 	AllFigure.push(new Figure(new Array(TypeFigure.Petit), FormeFigure.Rond, Cox1, Coy1));
 
-	Cox2 = getRandom(0, 2);
-	Coy2 = getRandom(0, 3);
+	Cox2 = getRandom(0, uneCarte.column - 1);
+	Coy2 = getRandom(0, uneCarte.row - 1);
 
 	while (Cox2 == Cox1 && Coy1 == Coy2) {
-		Cox2 = getRandom(0, 2);
-		Coy2 = getRandom(0, 3);
+		Cox2 = getRandom(0, uneCarte.column - 1);
+		Coy2 = getRandom(0, uneCarte.row - 1);
 	}
 	AllFigure.push(new Figure(new Array(TypeFigure.Moyen), FormeFigure.Rond, Cox2, Coy2));
 	//Code de Generation de Figure
-	var newCarte = new Carte(pos + 1, AllFigure);
+	var newCarte = new Carte(pos + 1, AllFigure, uneCarte.row, uneCarte.column);
 	deckPartie[pos] = newCarte;
 }
 
@@ -593,20 +660,21 @@ function creaMatriceVierge(row, column) {
 function creaMatrice(row, column) {
 
 	var myMatrice = creaMatriceVierge(row, column);
+	//window.alert(myMatrice)
 
 	var Cox1, Coy1, Cox2, Coy2;
 
-	Cox1 = getRandom(0, 2);
-	Coy1 = getRandom(0, 3);
+	Cox1 = getRandom(0, column - 1);
+	Coy1 = getRandom(0, row - 1);
 
 	myMatrice[Cox1][Coy1] = 1;
 
-	Cox2 = getRandom(0, 2);
-	Coy2 = getRandom(0, 3);
+	Cox2 = getRandom(0, column - 1);
+	Coy2 = getRandom(0, row - 1);
 
 	while (Cox2 == Cox1 && Coy1 == Coy2) {
-		Cox2 = getRandom(0, 2);
-		Coy2 = getRandom(0, 3);
+		Cox2 = getRandom(0, column - 1);
+		Coy2 = getRandom(0, row - 1);
 	}
 	myMatrice[Cox2][Coy2] = 2;
 
@@ -615,7 +683,129 @@ function creaMatrice(row, column) {
 }
 
 //=================================================================================
-//chercheCombi => Compte les combinainsons de 2 cartes a l'ecran
+//chercheCombi => Compte les combinainsons de 2 à 5 cartes a l'ecran
+//Pour changer le nombre de carte maximum dans une liste il faut changer la valeur max de N
+
+function chercherCombinaison() {
+	var Cptsolution = 0;
+	/*
+	 Pour toutes les longueurs possible d’un tas de carte (N = 0, N<4 ; N++)
+	Pour toutes les échantillon de cartes ( i = 0 ; i<16 – N ; i ++)
+		Pour toutes les autres cartes (j=0 ;j<15-i-N ;j++)
+			DeckTest = vide ;
+			DeckTest.push(DeckPartie[i])
+			Pour N + 2 cartes (k=1 ;k<2+N ;k++)
+				DeckTest.push(DeckPartie[i+k+j])
+			Tab = AssemblageArbre(copie(Decktest) , Decktest[0])
+			Pour toutes les valeurs de tab
+				Si tab[m] == N+2
+				//Woula j’ai trouvé*/
+	for (var N = 0; N < 4; N++) {
+		for (var i = 0; i < 16 - N; i++) {
+			for (var j = 0; j < 15 - i - N; j++) {
+				var DeckTeste = [];
+				var tabCode = [];
+				var tab = [];
+				var copie = [];
+				DeckTeste.push(deckPartie[i]);
+				for (var k = 1; k < N + 2; k++) {
+					DeckTeste.push(deckPartie[i + k + j])
+				}
+				tab = AssemblageARBRE(copieListeDeCarte(DeckTeste), copieCarte(DeckTeste[0]));
+
+				//Recupération de code
+
+				var solution = true;
+				for (var h = 0; h < tab.length; h++) {
+					tabCode.push(tab[h].code);
+				}
+				//Reagarde si il y a une solution
+				for (var g = 0; g < tab.length; g++) {
+					if (tab[g].code == DeckTeste.length) {
+						solution = false;
+					}
+				}
+				//Reagarde si il y a une solution
+				if (!solution) {
+					Cptsolution++;
+					var recup = [];
+					for (var h = 0; h < DeckTeste.length; h++) {
+						recup.push(deckPartie.indexOf(DeckTeste[h]) + 1);
+					}
+					window.alert("Combinaison a " + (N + 2) + " cartes trouvée : " + recup);
+				}
+			}
+		}
+	}
+	window.alert("Nombre de combinaison: " + Cptsolution);
+}
+
+function test() {
+	printCombinations([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 12);
+}
+
+function printCombinations(array, p) {
+	var combinations = [];
+	var Cptsolution = 0;
+	for (k = 2; k < p + 1; k++) {
+
+		function run(level, start) {
+			for (var i = start; i < array.length - k + level + 1; i++) {
+				combinations[level] = array[i];
+				//console.log(i);
+				if (level < k - 1) {
+
+					run(level + 1, i + 1);
+				} else {
+
+					var combTest = [];
+					for (var j = 0; j < combinations.length; j++) {
+						combTest.push(deckPartie[combinations[j]]);
+						//window.alert("Matrice ajouté num" + j + " :" + deckPartie[combinations[j]].getMatrice);
+						console.log("i" + j + " :" + combinations[j]);
+					}
+					console.log("matrice début ex: " + combTest[0].getMatrice);
+					console.log("Cartes selectionnées :(en partant de indice 0) :")
+					console.log(combinations.join(" "));
+					console.log("----- taille :" + combTest.length + " -------");
+
+					var cpt = testCombinaison(combTest, combinations, Cptsolution);
+					Cptsolution = cpt;
+				}
+			}
+		}
+		run(0, 0);
+		window.alert("fin test " + k + " cartes")
+	}
+	window.alert("nb combi :" + Cptsolution);
+}
+
+
+function testCombinaison(DeckTeste, combi, Cptsolution) {
+	var tabCode = [];
+	var tab = [];
+	//window.alert("---------------");
+	tab = AssemblageARBRE(copieListeDeCarte(DeckTeste), copieCarte(DeckTeste[0]));
+
+	//Recupération de code
+	var solution = true;
+	for (var h = 0; h < tab.length; h++) {
+		tabCode.push(tab[h].code);
+	}
+	//Reagarde si il y a une solution
+	for (var g = 0; g < tab.length; g++) {
+		if (tab[g].code == DeckTeste.length) {
+			solution = false;
+		}
+	}
+	//Reagarde si il y a une solution
+	if (!solution) {
+		Cptsolution++;
+		window.alert("Combinaison à " + (DeckTeste.length) + " cartes trouvée : " + combi);
+	}
+	return Cptsolution;
+}
+
 function chercheCombi2() {
 
 	var Cptsolution = 0;
@@ -673,6 +863,7 @@ function chercheCombi3() {
 
 			for (var k = 0; k < 15 - j; k++) { //Partie movible 2
 
+
 				var DeckTeste = [];
 				var tabCode = [];
 				var tab = [];
@@ -703,6 +894,39 @@ function chercheCombi3() {
 					tabCode.push(tab[h].code);
 				}
 
+
+
+				var DeckTeste = [];
+				var tabCode = [];
+				var tab = [];
+				var copie = [];
+				copie.splice(0, DeckTeste.length);
+				DeckTeste.splice(0, DeckTeste.length);
+				tab.splice(0, DeckTeste.length);
+				tabCode.splice(0, DeckTeste.length);
+
+				DeckTeste.push(deckPartie[i]);
+				DeckTeste.push(deckPartie[j + i + 1]);
+				DeckTeste.push(deckPartie[k + j + i + 2]);
+
+				for (var h = 0; h < DeckTeste.length; h++) {
+					copie.push(DeckTeste[i]);
+				}
+
+				for (var z = 0; z < DeckTeste; z++) {
+					if (DeckTeste[z] == null) {
+						window.alert("Pb carte null :" + i + j + k);
+					}
+				}
+
+				tab = AssemblageARBRE(copieListeDeCarte(DeckTeste), copieCarte(DeckTeste[0]));
+				var solution = true;
+
+				for (var h = 0; h < tab.length; h++) {
+					tabCode.push(tab[h].code);
+				}
+
+
 				for (var g = 0; g < tab.length; g++) {
 					if (tab[g].code == DeckTeste.length) {
 						solution = false;
@@ -724,6 +948,55 @@ function chercheCombi3() {
 
 //=================================================================================
 //FONCTION DE TEST => permet de tester des fonctionnalite via le bouton VALIDER
+
+
+var cpt = 1100;
+var x;
+var itv = 0;
+
+function decompte() {
+
+	//var progressnum = document.getElementById("progressnum");
+	var indicateur = document.getElementById("indicateur");
+
+	if (cpt >= 0) {
+
+		cpt--;
+		x = setTimeout("decompte()", 100);
+	}
+
+	else {
+		clearTimeout(x);
+	}
+
+	if (cpt == 0) {
+		window.alert("fin du jeu");
+		retour();
+		window.location.reload();
+		clearInterval(itv);
+	}
+
+	if (cpt < 550) {
+		document.getElementById("indicateur").style.backgroundColor = "orange";
+
+	}
+
+	if (cpt < 366) {
+		document.getElementById("indicateur").style.backgroundColor = "red";
+	}
+
+	indicateur.style.width = cpt + "px";
+	//progressnum.innerHTML = cpt;
+}
+
+function testerLesCartes() {
+	if (selectionMode == 0) {
+		testPourJeuClassique();
+	} else if (selectionMode == 1) {
+		testPourJeuInfini();
+	}
+}
+
 
 function testPourJeuInfini() {
 	try {
@@ -748,16 +1021,17 @@ function testPourJeuInfini() {
 			for (var i = 0; i < tab.length; i++) {
 				if (tab[i].code == carteselect.length) {
 					solution = false;
+					lesPoints += carteselect.length;
+					document.getElementById("affPoints").textContent = 'Score : ' + lesPoints;
 					changerlesCartes();
 				}
 			}
 			if (solution) {
-				window.alert("Rien trouve chef !!!");
+				document.getElementById("affSolution").textContent = 'Aucune solution trouvée...';
 			}
 			if (!solution) {
-				window.alert("J'ai une solution chef !!!!");
+				document.getElementById("affSolution").textContent = 'Assemblage de ' + copie.length + ' cartes trouvé !';
 			}
-			window.alert(TasDuJEU.length)
 		}
 	} catch (e) {
 		window.alert(e);
@@ -789,16 +1063,18 @@ function testPourJeuClassique() {
 		for (var i = 0; i < tab.length; i++) {
 			if (tab[i].code == carteselect.length) {
 				solution = false;
+				cpt = cpt + 20 * copie.length;
+				lesPoints += carteselect.length;
+				document.getElementById("affPoints").textContent = 'Score : ' + lesPoints;
 				changerlesCartesDeTasDeJeu();
 			}
 		}
 		if (solution) {
-			window.alert("Rien trouve chef !!!");
+			document.getElementById("affSolution").textContent = 'Aucune solution trouvée...';
 		}
 		if (!solution) {
-			window.alert("J'ai une solution chef !!!!");
+			document.getElementById("affSolution").textContent = 'Assemblage de ' + copie.length + ' cartes trouvé ! Il reste encore ' + TasDuJEU.length + ' cartes !';
 		}
-		window.alert(TasDuJEU.length)
 	}
 	/*} catch (e) {
 		window.alert(e);
@@ -824,7 +1100,7 @@ function copieCarte(uneCarte) {
 	for (var i = 0; i < uneCarte.SesFigures.length; i++) {
 		AllFigure.push(new Figure(uneCarte.SesFigures[i].type, uneCarte.SesFigures[i].forme, uneCarte.SesFigures[i].X, uneCarte.SesFigures[i].Y));
 	}
-	var carte = new Carte(uneCarte.getIdentifiant, AllFigure);
+	var carte = new Carte(uneCarte.getIdentifiant, AllFigure, uneCarte.row, uneCarte.column);
 	carte.Matrice = copieMatrice(uneCarte.Matrice, uneCarte.row, uneCarte.column);
 	return carte;
 }
@@ -993,60 +1269,7 @@ function SommeDeCarte(CarteMere, CarteFille) {
 //==================================================================================
 
 
-/*
-function ChoisirPseudo() {
-	let nom = localStorage.getItem('nom');
-	if (nom == null) {
-		nom = "SWISH";
-	}
-	document.getElementById('inputpseudo').setAttribute('value', nom);
-};
 
-function EnvoyerNouveauNom() {
-
-	let pseudo = document.getElementById('inputpseudo').value;
-	localStorage.setItem('nom', pseudo);
-	document.location.reload(true);
-
-};
-*/
-
-
-/*
-function addplayer(){
-	//j'ai mis une limite de 6joueurs, mais c'est a voir
-	if(nbplayers < 7){
-		//creation de la div contenant le pseudo
-		var divpseudo = document.createElement('div');
-		divpseudo.id = 'pseudolist';
-		//reprise du pseudo entre par le joueur
-		var pseudo = document.getElementById("inputpseudo").value;
-		//verification si pseudo vide pour lui donner un pseudo du style "Joueur3"
-		if(pseudo == "")
-		{
-			pseudo = "Joueur " + nbplayers;
-		}
-		//creation du text-pseudo
-		var tag = document.createElement("p");
-		tag.className = "pseudojoueur";
-	    var text = document.createTextNode(pseudo);
-	    tag.appendChild(text);
-	    //mise du text dans la division
-	    divpseudo.appendChild(tag);
-	    //insertion pseudo dans liste
-		document.getElementById("containplayers").appendChild(divpseudo);
-		//remise input vide ;)
-		document.getElementById("inputpseudo").value = "";
-		nbplayers = nbplayers +1;
-	}
-}
-
-function ajouterplayer(event){
-	if(event.keyCode == 13)
-		addplayer();
-}
-
-*/
 
 function doublonInterdit(uneCarte) {
 	var lesCoPetit = [];

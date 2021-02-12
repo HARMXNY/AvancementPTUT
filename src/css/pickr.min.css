@@ -1,1018 +1,2041 @@
+/*DESKTOP*/
+@media screen and (min-width: 992px) {
+	/*! Pickr 1.0.1 MIT | https://github.com/Simonwep/pickr */
+	.pickr{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
 
-/*! Pickr 1.0.1 MIT | https://github.com/Simonwep/pickr */
-.pickr{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-
-}
-.pickr *{
-	box-sizing:border-box
-}
-.pickr .pcr-button{
-	position:relative;
-	height:var(--y);
-	width: var(--y);
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s;
-}
-.pickr .pcr-button:before{
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr .pcr-button:after,.pickr .pcr-button:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-}
-.pickr .pcr-button:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr .pcr-button.clear{
-	background-size:70%
-}
-.pickr .pcr-button.clear:before{
-	opacity:0
-}
-.pickr .pcr-button.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr .pcr-button.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr button,.pickr input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr button:focus,.pickr input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	}
+	.pickr *{
+		box-sizing:border-box
+	}
+	.pickr .pcr-button{
+		position:relative;
+		height:var(--y);
+		width: var(--y);
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s;
+	}
+	.pickr .pcr-button:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr .pcr-button:after,.pickr .pcr-button:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+	.pickr .pcr-button:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr .pcr-button.clear{
+		background-size:70%
+	}
+	.pickr .pcr-button.clear:before{
+		opacity:0
+	}
+	.pickr .pcr-button.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr .pcr-button.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr button,.pickr input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr button:focus,.pickr input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
-/*! Pickr2 1.0.1 MIT | https://github.com/Simonwep/pickr2 */
-.pickr2{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
+	/*! Pickr2 1.0.1 MIT | https://github.com/Simonwep/pickr2 */
+	.pickr2{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
 
-}
-.pickr2 *{
-	box-sizing:border-box
-}
-.pickr2 .pcr-button2{
-	position:relative;
-	height:7vw;
-	width:7vw;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr2 .pcr-button2:before{
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr2 .pcr-button2:after,.pickr2 .pcr-button2:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr2 .pcr-button2:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr2 .pcr-button2.clear{
-	background-size:70%
-}
-.pickr2 .pcr-button2.clear:before{
-	opacity:0
-}
-.pickr2 .pcr-button2.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr2 .pcr-button2.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr2 button,.pickr2 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr2 button:focus,.pickr2 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	}
+	.pickr2 *{
+		box-sizing:border-box
+	}
+	.pickr2 .pcr-button2{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr2 .pcr-button2:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr2 .pcr-button2:after,.pickr2 .pcr-button2:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr2 .pcr-button2:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr2 .pcr-button2.clear{
+		background-size:70%
+	}
+	.pickr2 .pcr-button2.clear:before{
+		opacity:0
+	}
+	.pickr2 .pcr-button2.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr2 .pcr-button2.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr2 button,.pickr2 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr2 button:focus,.pickr2 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
-/*! Pickr3 1.0.1 MIT | https://github.com/Simonwep/pickr3 */
-.pickr3{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
-}
-.pickr3 *{
-	box-sizing:border-box
-}
-.pickr3 .pcr-button3{
-	position:relative;
-	height:7vw;
-	width:7vw;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr3 .pcr-button3:before{
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr3 .pcr-button3:after,.pickr3 .pcr-button3:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr3 .pcr-button3:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr3 .pcr-button3.clear{
-	background-size:70%
-}
-.pickr3 .pcr-button3.clear:before{
-	opacity:0
-}
-.pickr3 .pcr-button3.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr3 .pcr-button3.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr3 button,.pickr3 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr3 button:focus,.pickr3 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	/*! Pickr3 1.0.1 MIT | https://github.com/Simonwep/pickr3 */
+	.pickr3{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr3 *{
+		box-sizing:border-box
+	}
+	.pickr3 .pcr-button3{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr3 .pcr-button3:before{
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr3 .pcr-button3:after,.pickr3 .pcr-button3:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr3 .pcr-button3:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr3 .pcr-button3.clear{
+		background-size:70%
+	}
+	.pickr3 .pcr-button3.clear:before{
+		opacity:0
+	}
+	.pickr3 .pcr-button3.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr3 .pcr-button3.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr3 button,.pickr3 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr3 button:focus,.pickr3 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
 
-/*! Pickr4 1.0.1 MIT | https://github.com/Simonwep/pickr4 */
-.pickr4{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
-}
-.pickr4 *{
-	box-sizing:border-box
-}
-.pickr4 .pcr-button4{
-	position:relative;
-	height:7vw;
-	width:7vw;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr4 .pcr-button4:before{
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr4 .pcr-button4:after,.pickr4 .pcr-button4:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr4 .pcr-button4:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr4 .pcr-button4.clear{
-	background-size:70%
-}
-.pickr4 .pcr-button4.clear:before{
-	opacity:0
-}
-.pickr4 .pcr-button4.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr4 .pcr-button4.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr4 button,.pickr4 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr4 button:focus,.pickr4 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	/*! Pickr4 1.0.1 MIT | https://github.com/Simonwep/pickr4 */
+	.pickr4{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr4 *{
+		box-sizing:border-box
+	}
+	.pickr4 .pcr-button4{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr4 .pcr-button4:before{
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr4 .pcr-button4:after,.pickr4 .pcr-button4:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr4 .pcr-button4:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr4 .pcr-button4.clear{
+		background-size:70%
+	}
+	.pickr4 .pcr-button4.clear:before{
+		opacity:0
+	}
+	.pickr4 .pcr-button4.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr4 .pcr-button4.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr4 button,.pickr4 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr4 button:focus,.pickr4 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
 
-/*! Pickr5 1.0.1 MIT | https://github.com/Simonwep/pickr5 */
-.pickr5{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
-}
-.pickr5 *{
-	box-sizing:border-box
-}
-.pickr5 .pcr-button5{
-	position:relative;
-	height:2em;
-	width:2em;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr5 .pcr-button5:before{
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr5 .pcr-button5:after,.pickr5 .pcr-button5:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr5 .pcr-button5:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr5 .pcr-button5.clear{
-	background-size:70%
-}
-.pickr5 .pcr-button5.clear:before{
-	opacity:0
-}
-.pickr5 .pcr-button5.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr5 .pcr-button5.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr5 button,.pickr5 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr5 button:focus,.pickr5 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	/*! Pickr5 1.0.1 MIT | https://github.com/Simonwep/pickr5 */
+	.pickr5{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr5 *{
+		box-sizing:border-box
+	}
+	.pickr5 .pcr-button5{
+		position:relative;
+		height:2em;
+		width:2em;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr5 .pcr-button5:before{
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr5 .pcr-button5:after,.pickr5 .pcr-button5:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr5 .pcr-button5:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr5 .pcr-button5.clear{
+		background-size:70%
+	}
+	.pickr5 .pcr-button5.clear:before{
+		opacity:0
+	}
+	.pickr5 .pcr-button5.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr5 .pcr-button5.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr5 button,.pickr5 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr5 button:focus,.pickr5 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
-.pcr-app[data-theme=classic] .pcr-swatches>button{
-	position:relative;
-	width:1.75em;
-	height:1.75em;
-	border-radius:.15em;
-	cursor:pointer;
-	margin:2.5px;
-	flex-shrink:0;
-	justify-self:center;
-	transition:all .15s;
-	overflow:hidden;
-	background:transparent;
-	z-index:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches>button:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:6px;
-	border-radius:.15em;
-	z-index:-1
-}
-.pcr-app[data-theme=classic] .pcr-swatches>button:after{
-	content:"";
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:currentColor;
-	border:1px solid rgba(0,0,0,.05);
-	border-radius:.15em;
-	box-sizing:border-box
-}
-.pcr-app[data-theme=classic] .pcr-swatches>button:hover{
-	filter:brightness(1.05)
-}
-.pcr-app[data-theme=classic] .pcr-interaction{
-	display:flex;
-	flex-wrap:wrap;
-	align-items:center;
-	margin:0 -.2em
-}
-.pcr-app[data-theme=classic] .pcr-interaction>*{
-	margin:0 .2em
-}
-.pcr-app[data-theme=classic] .pcr-interaction input{
-	letter-spacing:.07em;
-	font-size:.75em;
-	text-align:center;
-	cursor:pointer;
-	color:#75797e;
-	background:#f1f3f4;
-	border-radius:.15em;
-	transition:all .15s;
-	padding:.45em .5em;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-interaction input:hover{
-	filter:brightness(.975)
-}
-.pcr-app[data-theme=classic] .pcr-interaction input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px rgba(66,133,244,.75)
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-result{
-	color:#75797e;
-	text-align:left;
-	flex:1 1 8em;
-	min-width:8em;
-	transition:all .2s;
-	border-radius:.15em;
-	background:#f1f3f4;
-	cursor:text
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-result::selection{
-	background:#4285f4;
-	color:#fff
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-type.active{
-	color:#fff;
-	background:#4285f4
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear,.pcr-app[data-theme=classic] .pcr-interaction .pcr-save{
-	width:auto;
-	color:#fff
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear:hover,.pcr-app[data-theme=classic] .pcr-interaction .pcr-save:hover{
-	filter:brightness(.925)
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-save{
-	background:#4285f4
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear{
-	background:#f44250
-}
-.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px rgba(244,66,80,.75)
-}
-.pcr-app[data-theme=classic] .pcr-selection{
-	display:flex;
-	justify-content:space-between;
-	flex-grow:1
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-picker{
-	position:absolute;
-	height:18px;
-	width:18px;
-	border:2px solid #fff;
-	border-radius:100%;
-	user-select:none
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview{
-	position:relative;
-	z-index:1;
-	width:2em;
-	display:flex;
-	flex-direction:column;
-	justify-content:space-between;
-	margin-right:.75em
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	border-radius:.15em;
-	z-index:-1
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-last-color{
-	cursor:pointer;
-	transition:background-color .3s,box-shadow .3s;
-	border-radius:.15em .15em 0 0;
-	z-index:2
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-current-color{
-	border-radius:0 0 .15em .15em
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-current-color,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-last-color{
-	background:currentColor;
-	width:100%;
-	height:50%
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette{
-	position:relative;
-	user-select:none;
-	display:flex;
-	flex-direction:column;
-	cursor:grab;
-	cursor:-moz-grab;
-	cursor:-webkit-grab
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser:active,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity:active,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette:active{
-	cursor:grabbing;
-	cursor:-moz-grabbing;
-	cursor:-webkit-grabbing
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette{
-	width:100%;
-	height:8em;
-	z-index:1
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette .pcr-palette{
-	flex-grow:1;
-	border-radius:.15em
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette .pcr-palette:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	border-radius:.15em;
-	z-index:-1
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity{
-	margin-left:.75em
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-picker,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-picker{
-	left:50%;
-	transform:translateX(-50%)
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-slider,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-slider{
-	width:8px;
-	flex-grow:1;
-	border-radius:50em
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-slider{
-	background:linear-gradient(180deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)
-}
-.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-slider{
-	background:linear-gradient(180deg,transparent,#000),url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:100%,50%
-}
+	.pcr-app[data-theme=classic] .pcr-swatches>button{
+		position:relative;
+		width:1.75em;
+		height:1.75em;
+		border-radius:.15em;
+		cursor:pointer;
+		margin:2.5px;
+		flex-shrink:0;
+		justify-self:center;
+		transition:all .15s;
+		overflow:hidden;
+		background:transparent;
+		z-index:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches>button:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:6px;
+		border-radius:.15em;
+		z-index:-1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches>button:after{
+		content:"";
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:currentColor;
+		border:1px solid rgba(0,0,0,.05);
+		border-radius:.15em;
+		box-sizing:border-box
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches>button:hover{
+		filter:brightness(1.05)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction{
+		display:flex;
+		flex-wrap:wrap;
+		align-items:center;
+		margin:0 -.2em
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction>*{
+		margin:0 .2em
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction input{
+		letter-spacing:.07em;
+		font-size:.75em;
+		text-align:center;
+		cursor:pointer;
+		color:#75797e;
+		background:#f1f3f4;
+		border-radius:.15em;
+		transition:all .15s;
+		padding:.45em .5em;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction input:hover{
+		filter:brightness(.975)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px rgba(66,133,244,.75)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-result{
+		color:#75797e;
+		text-align:left;
+		flex:1 1 8em;
+		min-width:8em;
+		transition:all .2s;
+		border-radius:.15em;
+		background:#f1f3f4;
+		cursor:text
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-result::selection{
+		background:#4285f4;
+		color:#fff
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-type.active{
+		color:#fff;
+		background:#4285f4
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear,.pcr-app[data-theme=classic] .pcr-interaction .pcr-save{
+		width:auto;
+		color:#fff
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear:hover,.pcr-app[data-theme=classic] .pcr-interaction .pcr-save:hover{
+		filter:brightness(.925)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-save{
+		background:#4285f4
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear{
+		background:#f44250
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px rgba(244,66,80,.75)
+	}
+	.pcr-app[data-theme=classic] .pcr-selection{
+		display:flex;
+		justify-content:space-between;
+		flex-grow:1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-picker{
+		position:absolute;
+		height:18px;
+		width:18px;
+		border:2px solid #fff;
+		border-radius:100%;
+		user-select:none
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview{
+		position:relative;
+		z-index:1;
+		width:2em;
+		display:flex;
+		flex-direction:column;
+		justify-content:space-between;
+		margin-right:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		border-radius:.15em;
+		z-index:-1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-last-color{
+		cursor:pointer;
+		transition:background-color .3s,box-shadow .3s;
+		border-radius:.15em .15em 0 0;
+		z-index:2
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-current-color{
+		border-radius:0 0 .15em .15em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-current-color,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-last-color{
+		background:currentColor;
+		width:100%;
+		height:50%
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette{
+		position:relative;
+		user-select:none;
+		display:flex;
+		flex-direction:column;
+		cursor:grab;
+		cursor:-moz-grab;
+		cursor:-webkit-grab
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser:active,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity:active,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette:active{
+		cursor:grabbing;
+		cursor:-moz-grabbing;
+		cursor:-webkit-grabbing
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette{
+		width:100%;
+		height:8em;
+		z-index:1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette .pcr-palette{
+		flex-grow:1;
+		border-radius:.15em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette .pcr-palette:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		border-radius:.15em;
+		z-index:-1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity{
+		margin-left:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-picker,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-picker{
+		left:50%;
+		transform:translateX(-50%)
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-slider,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-slider{
+		width:8px;
+		flex-grow:1;
+		border-radius:50em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-slider{
+		background:linear-gradient(180deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-slider{
+		background:linear-gradient(180deg,transparent,#000),url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:100%,50%
+	}
 
 
-/*! Pickr6 1.0.1 MIT | https://github.com/Simonwep/pickr6 */
-.pickr6{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
-}
-.pickr6 *{
-	box-sizing:border-box
-}
-.pickr6 .pcr-button6{
-	position:relative;
-	height:7vw;
-	width:7vw;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr6 .pcr-button6:before{
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr6 .pcr-button6:after,.pickr6 .pcr-button6:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr6 .pcr-button6:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr6 .pcr-button6.clear{
-	background-size:70%
-}
-.pickr6 .pcr-button6.clear:before{
-	opacity:0
-}
-.pickr6 .pcr-button6.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr6 .pcr-button6.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr6 button,.pickr6 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr6 button:focus,.pickr6 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	/*! Pickr6 1.0.1 MIT | https://github.com/Simonwep/pickr6 */
+	.pickr6{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr6 *{
+		box-sizing:border-box
+	}
+	.pickr6 .pcr-button6{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr6 .pcr-button6:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr6 .pcr-button6:after,.pickr6 .pcr-button6:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr6 .pcr-button6:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr6 .pcr-button6.clear{
+		background-size:70%
+	}
+	.pickr6 .pcr-button6.clear:before{
+		opacity:0
+	}
+	.pickr6 .pcr-button6.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr6 .pcr-button6.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr6 button,.pickr6 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr6 button:focus,.pickr6 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
 
-/*! Pickr7 1.0.1 MIT | https://github.com/Simonwep/pickr7 */
-.pickr7{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
-}
-.pickr7 *{
-	box-sizing:border-box
-}
-.pickr7 .pcr-button7{
-	position:relative;
-	height:7vw;
-	width:7vw;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr7 .pcr-button7:before{
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr7 .pcr-button7:after,.pickr7 .pcr-button7:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr7 .pcr-button7:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr7 .pcr-button7.clear{
-	background-size:70%
-}
-.pickr7 .pcr-button7.clear:before{
-	opacity:0
-}
-.pickr7 .pcr-button7.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr7 .pcr-button7.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr7 button,.pickr7 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr7 button:focus,.pickr7 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	/*! Pickr7 1.0.1 MIT | https://github.com/Simonwep/pickr7 */
+	.pickr7{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr7 *{
+		box-sizing:border-box
+	}
+	.pickr7 .pcr-button7{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr7 .pcr-button7:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr7 .pcr-button7:after,.pickr7 .pcr-button7:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr7 .pcr-button7:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr7 .pcr-button7.clear{
+		background-size:70%
+	}
+	.pickr7 .pcr-button7.clear:before{
+		opacity:0
+	}
+	.pickr7 .pcr-button7.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr7 .pcr-button7.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr7 button,.pickr7 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr7 button:focus,.pickr7 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
-}
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
 
-}
+	}
 
 
-/*! Pickr8 1.0.1 MIT | https://github.com/Simonwep/pickr8 */
-.pickr8{
-	position:relative;
-	overflow:visible;
-	transform:translateY(0);
-	margin : 0vw 2vw 2vw 2vw;
-}
-.pickr8 *{
-	box-sizing:border-box
-}
-.pickr8 .pcr-button8{
-	position:relative;
-	height:7vw;
-	width:7vw;
-	padding:.5em;
-	cursor:pointer;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	border-radius:.15em;
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
-	background-size:0;
-	transition:all .3s
-}
-.pickr8 .pcr-button8:before{
-	background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
-	background-size:.5em;
-	z-index:-1;
-	z-index:auto
-}
-.pickr8 .pcr-button8:after,.pickr8 .pcr-button8:before{
-	position:absolute;
-	content:"";
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	border-radius:15em
-}
-.pickr8 .pcr-button8:after{
-	transition:background .3s;
-	background:currentColor
-}
-.pickr8 .pcr-button8.clear{
-	background-size:70%
-}
-.pickr8 .pcr-button8.clear:before{
-	opacity:0
-}
-.pickr8 .pcr-button8.clear:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pickr8 .pcr-button8.disabled{
-	cursor:not-allowed
-}
-.pcr-app button,.pcr-app input,.pickr8 button,.pickr8 input{
-	outline:none;
-	border:none;
-	-webkit-appearance:none
-}
-.pcr-app button:focus,.pcr-app input:focus,.pickr8 button:focus,.pickr8 input:focus{
-	box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
-}
-.pcr-app[data-theme=classic]{
-	position:absolute;
-	display:flex;
-	flex-direction:column;
-	z-index:10000;
-	font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-	box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
-	width:28.5em;
-	max-width:95vw;
-	padding:.8em;
-	border-radius:.1em;
-	background:#fff;
-	opacity:0;
-	visibility:hidden;
-	transition:opacity .3s;
-	left:0;
-	top:0
-}
-.pcr-app[data-theme=classic].visible{
-	visibility:visible;
-	opacity:1
-}
-.pcr-app[data-theme=classic] .pcr-swatches{
-	display:flex;
-	flex-wrap:wrap;
-	margin-top:.75em
-}
-.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
-	margin:0
-}
-@supports (display:grid){
+	/*! Pickr8 1.0.1 MIT | https://github.com/Simonwep/pickr8 */
+	.pickr8{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr8 *{
+		box-sizing:border-box
+	}
+	.pickr8 .pcr-button8{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr8 .pcr-button8:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr8 .pcr-button8:after,.pickr8 .pcr-button8:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr8 .pcr-button8:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr8 .pcr-button8.clear{
+		background-size:70%
+	}
+	.pickr8 .pcr-button8.clear:before{
+		opacity:0
+	}
+	.pickr8 .pcr-button8.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr8 .pcr-button8.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr8 button,.pickr8 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr8 button:focus,.pickr8 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
 	.pcr-app[data-theme=classic] .pcr-swatches{
-	display:grid;
-	align-items:center;
-	justify-content:space-around;
-	grid-template-columns:repeat(auto-fit,1.75em)
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
 }
 
+@media screen and (min-width: 0px) and (max-width: 992px) {
+	/*! Pickr 1.0.1 MIT | https://github.com/Simonwep/pickr */
+	.pickr{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+
+	}
+	.pickr *{
+		box-sizing:border-box
+	}
+	.pickr .pcr-button{
+		position:relative;
+		height: calc(1.5*var(--y));
+		width: calc(1.5*var(--y));
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s;
+	}
+	.pickr .pcr-button:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr .pcr-button:after,.pickr .pcr-button:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+	.pickr .pcr-button:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr .pcr-button.clear{
+		background-size:70%
+	}
+	.pickr .pcr-button.clear:before{
+		opacity:0
+	}
+	.pickr .pcr-button.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr .pcr-button.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr button,.pickr input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr button:focus,.pickr input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+	/*! Pickr2 1.0.1 MIT | https://github.com/Simonwep/pickr2 */
+	.pickr2{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+
+	}
+	.pickr2 *{
+		box-sizing:border-box
+	}
+	.pickr2 .pcr-button2{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr2 .pcr-button2:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr2 .pcr-button2:after,.pickr2 .pcr-button2:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr2 .pcr-button2:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr2 .pcr-button2.clear{
+		background-size:70%
+	}
+	.pickr2 .pcr-button2.clear:before{
+		opacity:0
+	}
+	.pickr2 .pcr-button2.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr2 .pcr-button2.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr2 button,.pickr2 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr2 button:focus,.pickr2 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+	/*! Pickr3 1.0.1 MIT | https://github.com/Simonwep/pickr3 */
+	.pickr3{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr3 *{
+		box-sizing:border-box
+	}
+	.pickr3 .pcr-button3{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr3 .pcr-button3:before{
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr3 .pcr-button3:after,.pickr3 .pcr-button3:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr3 .pcr-button3:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr3 .pcr-button3.clear{
+		background-size:70%
+	}
+	.pickr3 .pcr-button3.clear:before{
+		opacity:0
+	}
+	.pickr3 .pcr-button3.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr3 .pcr-button3.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr3 button,.pickr3 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr3 button:focus,.pickr3 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+
+	/*! Pickr4 1.0.1 MIT | https://github.com/Simonwep/pickr4 */
+	.pickr4{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr4 *{
+		box-sizing:border-box
+	}
+	.pickr4 .pcr-button4{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr4 .pcr-button4:before{
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr4 .pcr-button4:after,.pickr4 .pcr-button4:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr4 .pcr-button4:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr4 .pcr-button4.clear{
+		background-size:70%
+	}
+	.pickr4 .pcr-button4.clear:before{
+		opacity:0
+	}
+	.pickr4 .pcr-button4.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr4 .pcr-button4.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr4 button,.pickr4 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr4 button:focus,.pickr4 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+
+	/*! Pickr5 1.0.1 MIT | https://github.com/Simonwep/pickr5 */
+	.pickr5{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr5 *{
+		box-sizing:border-box
+	}
+	.pickr5 .pcr-button5{
+		position:relative;
+		height:2em;
+		width:2em;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr5 .pcr-button5:before{
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr5 .pcr-button5:after,.pickr5 .pcr-button5:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr5 .pcr-button5:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr5 .pcr-button5.clear{
+		background-size:70%
+	}
+	.pickr5 .pcr-button5.clear:before{
+		opacity:0
+	}
+	.pickr5 .pcr-button5.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr5 .pcr-button5.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr5 button,.pickr5 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr5 button:focus,.pickr5 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+	.pcr-app[data-theme=classic] .pcr-swatches>button{
+		position:relative;
+		width:1.75em;
+		height:1.75em;
+		border-radius:.15em;
+		cursor:pointer;
+		margin:2.5px;
+		flex-shrink:0;
+		justify-self:center;
+		transition:all .15s;
+		overflow:hidden;
+		background:transparent;
+		z-index:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches>button:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:6px;
+		border-radius:.15em;
+		z-index:-1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches>button:after{
+		content:"";
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:currentColor;
+		border:1px solid rgba(0,0,0,.05);
+		border-radius:.15em;
+		box-sizing:border-box
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches>button:hover{
+		filter:brightness(1.05)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction{
+		display:flex;
+		flex-wrap:wrap;
+		align-items:center;
+		margin:0 -.2em
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction>*{
+		margin:0 .2em
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction input{
+		letter-spacing:.07em;
+		font-size:.75em;
+		text-align:center;
+		cursor:pointer;
+		color:#75797e;
+		background:#f1f3f4;
+		border-radius:.15em;
+		transition:all .15s;
+		padding:.45em .5em;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction input:hover{
+		filter:brightness(.975)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px rgba(66,133,244,.75)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-result{
+		color:#75797e;
+		text-align:left;
+		flex:1 1 8em;
+		min-width:8em;
+		transition:all .2s;
+		border-radius:.15em;
+		background:#f1f3f4;
+		cursor:text
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-result::selection{
+		background:#4285f4;
+		color:#fff
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-type.active{
+		color:#fff;
+		background:#4285f4
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear,.pcr-app[data-theme=classic] .pcr-interaction .pcr-save{
+		width:auto;
+		color:#fff
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear:hover,.pcr-app[data-theme=classic] .pcr-interaction .pcr-save:hover{
+		filter:brightness(.925)
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-save{
+		background:#4285f4
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear{
+		background:#f44250
+	}
+	.pcr-app[data-theme=classic] .pcr-interaction .pcr-clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px rgba(244,66,80,.75)
+	}
+	.pcr-app[data-theme=classic] .pcr-selection{
+		display:flex;
+		justify-content:space-between;
+		flex-grow:1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-picker{
+		position:absolute;
+		height:18px;
+		width:18px;
+		border:2px solid #fff;
+		border-radius:100%;
+		user-select:none
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview{
+		position:relative;
+		z-index:1;
+		width:2em;
+		display:flex;
+		flex-direction:column;
+		justify-content:space-between;
+		margin-right:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		border-radius:.15em;
+		z-index:-1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-last-color{
+		cursor:pointer;
+		transition:background-color .3s,box-shadow .3s;
+		border-radius:.15em .15em 0 0;
+		z-index:2
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-current-color{
+		border-radius:0 0 .15em .15em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-current-color,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-preview .pcr-last-color{
+		background:currentColor;
+		width:100%;
+		height:50%
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette{
+		position:relative;
+		user-select:none;
+		display:flex;
+		flex-direction:column;
+		cursor:grab;
+		cursor:-moz-grab;
+		cursor:-webkit-grab
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser:active,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity:active,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette:active{
+		cursor:grabbing;
+		cursor:-moz-grabbing;
+		cursor:-webkit-grabbing
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette{
+		width:100%;
+		height:8em;
+		z-index:1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette .pcr-palette{
+		flex-grow:1;
+		border-radius:.15em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-palette .pcr-palette:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:url('data:image/svg+xml;	utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		border-radius:.15em;
+		z-index:-1
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity{
+		margin-left:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-picker,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-picker{
+		left:50%;
+		transform:translateX(-50%)
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-slider,.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-slider{
+		width:8px;
+		flex-grow:1;
+		border-radius:50em
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-chooser .pcr-slider{
+		background:linear-gradient(180deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)
+	}
+	.pcr-app[data-theme=classic] .pcr-selection .pcr-color-opacity .pcr-slider{
+		background:linear-gradient(180deg,transparent,#000),url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:100%,50%
+	}
+
+
+	/*! Pickr6 1.0.1 MIT | https://github.com/Simonwep/pickr6 */
+	.pickr6{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr6 *{
+		box-sizing:border-box
+	}
+	.pickr6 .pcr-button6{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr6 .pcr-button6:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr6 .pcr-button6:after,.pickr6 .pcr-button6:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr6 .pcr-button6:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr6 .pcr-button6.clear{
+		background-size:70%
+	}
+	.pickr6 .pcr-button6.clear:before{
+		opacity:0
+	}
+	.pickr6 .pcr-button6.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr6 .pcr-button6.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr6 button,.pickr6 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr6 button:focus,.pickr6 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+
+	/*! Pickr7 1.0.1 MIT | https://github.com/Simonwep/pickr7 */
+	.pickr7{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr7 *{
+		box-sizing:border-box
+	}
+	.pickr7 .pcr-button7{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr7 .pcr-button7:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr7 .pcr-button7:after,.pickr7 .pcr-button7:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr7 .pcr-button7:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr7 .pcr-button7.clear{
+		background-size:70%
+	}
+	.pickr7 .pcr-button7.clear:before{
+		opacity:0
+	}
+	.pickr7 .pcr-button7.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr7 .pcr-button7.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr7 button,.pickr7 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr7 button:focus,.pickr7 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
+
+
+	/*! Pickr8 1.0.1 MIT | https://github.com/Simonwep/pickr8 */
+	.pickr8{
+		position:relative;
+		overflow:visible;
+		transform:translateY(0);
+		margin : 0vw 2vw 2vw 2vw;
+	}
+	.pickr8 *{
+		box-sizing:border-box
+	}
+	.pickr8 .pcr-button8{
+		position:relative;
+		height:7vw;
+		width:7vw;
+		padding:.5em;
+		cursor:pointer;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		border-radius:.15em;
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="%2342445A" stroke-width="5px" stroke-linecap="round"><path d="M45,45L5,5"></path><path d="M45,5L5,45"></path></svg>') no-repeat 50%;
+		background-size:0;
+		transition:all .3s
+	}
+	.pickr8 .pcr-button8:before{
+		background:url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="gray" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>');
+		background-size:.5em;
+		z-index:-1;
+		z-index:auto
+	}
+	.pickr8 .pcr-button8:after,.pickr8 .pcr-button8:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		border-radius:15em
+	}
+	.pickr8 .pcr-button8:after{
+		transition:background .3s;
+		background:currentColor
+	}
+	.pickr8 .pcr-button8.clear{
+		background-size:70%
+	}
+	.pickr8 .pcr-button8.clear:before{
+		opacity:0
+	}
+	.pickr8 .pcr-button8.clear:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pickr8 .pcr-button8.disabled{
+		cursor:not-allowed
+	}
+	.pcr-app button,.pcr-app input,.pickr8 button,.pickr8 input{
+		outline:none;
+		border:none;
+		-webkit-appearance:none
+	}
+	.pcr-app button:focus,.pcr-app input:focus,.pickr8 button:focus,.pickr8 input:focus{
+		box-shadow:0 0 0 1px #f1f3f4,0 0 0 3px currentColor
+	}
+	.pcr-app[data-theme=classic]{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		z-index:10000;
+		font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		box-shadow:0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+		width:28.5em;
+		max-width:95vw;
+		padding:.8em;
+		border-radius:.1em;
+		background:#fff;
+		opacity:0;
+		visibility:hidden;
+		transition:opacity .3s;
+		left:0;
+		top:0
+	}
+	.pcr-app[data-theme=classic].visible{
+		visibility:visible;
+		opacity:1
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches{
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:.75em
+	}
+	.pcr-app[data-theme=classic] .pcr-swatches.pcr-last{
+		margin:0
+	}
+	@supports (display:grid){
+		.pcr-app[data-theme=classic] .pcr-swatches{
+		display:grid;
+		align-items:center;
+		justify-content:space-around;
+		grid-template-columns:repeat(auto-fit,1.75em)
+	}
+
+	}
 }

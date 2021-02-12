@@ -1,0 +1,84 @@
+/*Ecran*/
+@media screen and (min-width: 960px) {
+    /*ROND*/
+    .anneau {
+        position: relative;
+        background-color: var(--colorbase);
+        border-radius: var(--v);
+        height: var(--v);
+        width: var(--v);
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .anneau2 {
+        position: relative;
+        background-color: white;
+        border-radius: var(--v);
+        height: var(--v);
+        width: var(--v);
+        left : calc((var(--u) - var(--v))/2);
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .anneau3 {
+        position: relative;
+        background-color: var(--colorbase);
+        border-radius: var(--v);
+        height: var(--v);
+        width: var(--v);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .rondinterieur {
+        background-color: var(--lighttercia);
+        height: var(--w);
+        width: var(--w);
+        display: table;
+        margin: 0 auto;
+        border-radius: var(--w);
+    }
+    .rond {
+        display: table;
+        margin: 0 auto;
+        background-color: var(--colorbase);
+        height: var(--w);
+        width: var(--w);
+        border-radius: var(--w);
+    }
+
+    .rondcache {
+        display: table;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: var(--y);
+    }
+    .rond2 {
+        display: table;
+        margin: 0 auto;
+        background-color: white;
+        height: var(--w);
+        width: var(--w);
+        border-radius: var(--w);
+    }
+    .rond3 {
+        position: relative;
+        top : calc((var(--v) - var(--w))/ 2);
+        left : calc((var(--v) - var(--w))/2);
+        display: table-cell;
+        vertical-align: middle;
+        background-color: white;
+        height: var(--w);
+        width: var(--w);
+        border-radius: var(--w);
+    }
+    .rond4 {
+        display: table;
+        margin: 0 auto;
+        background-color: var(--colorbase);
+        height: var(--w);
+        width: var(--w);
+        border-radius: var(--w);
+    }
+}
+
+   
